@@ -1,20 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login Page</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <div class="login-container">
-        <h1>Login</h1>
-        <form id="loginForm">
-            <input type="email" placeholder="Email" required />
-            <input type="password" placeholder="Password" minlength="6" required />
-            <button type="submit">Login</button>
-        </form>
+  <div class="wrap">
+    <div class="hero">
+      <h1>Welcome Back</h1>
+      <p>Please login to continue</p>
+      <div class="shape s1"></div>
+      <div class="shape s2"></div>
+      <div class="shape s3"></div>
     </div>
-    <script src="script.js"></script>
+    <div class="panel">
+      <form id="loginForm">
+        <h2>Login</h2>
+
+        <!-- Email Field -->
+        <div class="field">
+          <input type="email" id="email" placeholder=" " required>
+          <label for="email">Email</label>
+          <span class="error"></span>
+        </div>
+
+        <!-- Password Field -->
+        <div class="field">
+          <input type="password" id="password" placeholder=" " minlength="6" required>
+          <label for="password">Password</label>
+          <button type="button" class="toggle">Show</button>
+          <span class="error"></span>
+        </div>
+
+        <!-- Submit -->
+        <button type="submit" class="submit">Login</button>
+
+        <!-- Message -->
+        <div class="message"></div>
+      </form>
+    </div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
