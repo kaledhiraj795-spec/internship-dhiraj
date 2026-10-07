@@ -17,6 +17,19 @@ body {
   grid-template-columns: 1.1fr 1fr;
   min-height: 100vh;
 }
+.forgot {
+  margin-top: 1rem;
+  text-align: center;
+}
+.forgot a {
+  color: var(--coral);
+  text-decoration: underline;
+  cursor: pointer;
+}
+.forgot a:hover {
+  color: var(--ink);
+}
+
 .hero {
   position: relative;
   overflow: hidden;

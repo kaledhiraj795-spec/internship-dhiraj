@@ -4,6 +4,27 @@ document.addEventListener('DOMContentLoaded', () => {
     const passwordInput = document.getElementById('password');
     const toggleBtn = document.querySelector('.toggle');
     const messageDiv = document.querySelector('.message');
+    const forgotLink = document.getElementById('forgotLink');
+
+if (forgotLink) {
+  forgotLink.addEventListener('click', (e) => {
+    e.preventDefault();
+    const emailValue = emailInput ? emailInput.value.trim() : "";
+
+    if (!emailValue) {
+      if (messageDiv) {
+        messageDiv.textContent = "Please enter your email before resetting.";
+        messageDiv.className = "message";
+      }
+    } else {
+      if (messageDiv) {
+        messageDiv.textContent = `Password reset link sent to ${emailValue}`;
+        messageDiv.className = "message ok";
+      }
+    }
+  });
+}
+
 
     // Password Visibility Toggle
     if (toggleBtn) {
