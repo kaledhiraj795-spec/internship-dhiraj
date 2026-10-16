@@ -246,4 +246,80 @@
   padding: 24px 20px;
   width: 260px;
   box-shadow: 0 4px 16px rgba(6, 59, 105, 0.08);
-  border:
+  border:none;
+}
+/* Placement Hero Section */
+.placement-hero {
+    position: relative;
+    background-image: url('../image/campus.png.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 20px;
+    text-align: center;
+    overflow: hidden;
+}
+
+/* Faint Image Overlay */
+.placement-hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.65);
+    z-index: 1;
+}
+
+/* Bring Text and Buttons above Overlay */
+.placement-hero > * {
+    position: relative;
+    z-index: 2;
+}
+/* Student Profile Image Styling */
+.student-card img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 12px;
+    border: 3px solid #e2e8f0;
+    transition: transform 0.3s ease;
+}
+
+/* Hover Effect - Card & Image Zoom */
+.student-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 24px rgba(6, 59, 105, 0.15);
+}
+
+.student-card:hover img {
+    transform: scale(1.05);
+    border-color: #0b2545;
+}
+
+/* Student Information Text */
+.student-card h3 {
+    font-size: 18px;
+    color: #1e293b;
+    font-weight: 600;
+    margin-bottom: 4px;
+}
+
+.student-card p {
+    font-size: 14px;
+    color: #64748b;
+    margin-bottom: 4px;
+}
+
+/* Package Highlight Styling */
+.student-card .package {
+    font-weight: 700;
+    color: #0b2545;
+    background-color: #f1f5f9;
+    padding: 4px 10px;
+    border-radius: 20px;
+    display: inline-block;
+    margin-top: 6px;
+}
