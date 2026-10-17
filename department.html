@@ -4,70 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Departments | ASM College</title>
-    <link rel="stylesheet" href="style.css">
+    <meta name="description" content="Explore Engineering, BCA and MCA academic pathways at ASM NextGen Technical Campus, with a focus on applied learning and future-ready skills.">
+    <meta name="theme-color" content="#071930">
+    <title>Academic Departments | ASM NextGen Technical Campus</title>
     <link rel="stylesheet" href="css/site.css">
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        .navbar {
-            background: var(--navy);
-            color: white;
-            padding: 20px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            text-align: center;
-            gap: 18px;
-        }
-
-        .logo {
-            font-size: 32px;
-            font-weight: bold;
-            text-align: center;
-        }
-
-        .navbar nav {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 25px;
-        }
-
-        .navbar nav a {
-            color: white;
-            text-decoration: none;
-            font-size: 16px;
-            white-space: nowrap;
-        }
-
-        .navbar nav a:hover {
-            text-decoration: underline;
-            color: var(--pale-blue);
-        }
-
-        @media (max-width: 600px) {
-            .logo {
-                font-size: 27px;
-            }
-
-            .navbar nav {
-                gap: 14px;
-            }
-
-            .navbar nav a {
-                font-size: 14px;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="css/departments.css">
 </head>
 
-<body>
+<body class="page-departments">
 
 <header class="site-shared-header">
     <div class="site-header-inner">
@@ -92,99 +36,131 @@
     </div>
 </header>
 
-<section class="hero">
-    <h1>Our Departments</h1>
-    <p>Explore our departments and discover opportunities for academic and professional growth.</p>
-</section>
-
-<section class="departments-section">
-    <h2>Academic Departments</h2>
-    <div class="underline"></div>
-
-    <div class="department-container">
-
-        <div class="department-card">
-            <span class="department-code">BCA</span>
-            <h3>Computer Applications</h3>
-            <p>Learn programming, software development, web technologies and databases.</p>
+<main>
+    <section class="departments-hero" aria-labelledby="departments-title">
+        <div class="departments-hero-glow" aria-hidden="true"></div>
+        <div class="departments-hero-content">
+            <p class="departments-eyebrow">LEARN WITH PURPOSE</p>
+            <h1 id="departments-title">Discover your field.<br><span>Build what comes next.</span></h1>
+            <p class="departments-hero-copy">
+                Explore focused academic pathways in Engineering, Computer Applications
+                and postgraduate computing—designed to connect strong foundations with
+                practical, future-ready skills.
+            </p>
+            <div class="departments-hero-actions">
+                <a class="departments-button departments-button-primary" href="#programs">Explore departments <span aria-hidden="true">↓</span></a>
+                <a class="departments-button departments-button-secondary" href="addmission.html">Admission information <span aria-hidden="true">→</span></a>
+            </div>
         </div>
+        <div class="departments-hero-mark" aria-hidden="true">ASM</div>
+    </section>
 
-        <div class="department-card">
-            <span class="department-code">BBA</span>
-            <h3>Business Administration</h3>
-            <p>Develop leadership, management, business strategy and entrepreneurship skills.</p>
+    <section class="departments-overview" aria-labelledby="departments-overview-title">
+        <div class="departments-overview-inner">
+            <div class="departments-overview-heading">
+                <p class="departments-kicker">ACADEMIC PATHWAYS</p>
+                <h2 id="departments-overview-title">A place to turn curiosity into capability</h2>
+                <p>
+                    Whether you want to engineer technology or create software solutions,
+                    choose a pathway that matches your ambitions and build knowledge through
+                    structured study, projects and problem-solving.
+                </p>
+            </div>
+
+            <div class="department-container" id="programs">
+                <article class="department-card department-card-engineering">
+                    <div class="department-card-top">
+                        <span class="department-code">B.E.</span>
+                        <span class="department-index" aria-hidden="true">01</span>
+                    </div>
+                    <div class="department-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48"><path d="M19 5h10l2 7 6 3 6-2 5 9-5 5v7l5 5-5 9-7-2-6 3-2 7H19l-2-7-6-3-7 2-5-9 5-5v-7l-5-5 5-9 7 2 6-3z" transform="translate(3 0) scale(.86)"/><circle cx="24" cy="24" r="7"/></svg>
+                    </div>
+                    <h3>Engineering</h3>
+                    <p class="department-degree">Bachelor of Engineering</p>
+                    <p class="department-summary">
+                        Build a strong base in engineering principles and apply it to real
+                        technical challenges through analytical thinking, design and practical work.
+                    </p>
+                    <div class="department-focus">
+                        <h4>Academic focus</h4>
+                        <ul>
+                            <li>Engineering fundamentals and problem-solving</li>
+                            <li>Computer Science and Information Technology</li>
+                            <li>Artificial Intelligence and Machine Learning</li>
+                        </ul>
+                    </div>
+                    <p class="department-outcome"><strong>Grow toward:</strong> engineering, software, AI/ML and technology roles.</p>
+                    <a class="department-link" href="coursesprog.html">Explore engineering programs <span aria-hidden="true">→</span></a>
+                </article>
+
+                <article class="department-card department-card-bca">
+                    <div class="department-card-top">
+                        <span class="department-code">BCA</span>
+                        <span class="department-index" aria-hidden="true">02</span>
+                    </div>
+                    <div class="department-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48"><rect x="5" y="7" width="38" height="27" rx="4"/><path d="M16 41h16M24 34v7M14 17l5 5-5 5M24 27h10"/></svg>
+                    </div>
+                    <h3>Computer Applications</h3>
+                    <p class="department-degree">Bachelor of Computer Applications</p>
+                    <p class="department-summary">
+                        Learn how software is planned, built and maintained, pairing programming
+                        fundamentals with databases, web technologies and application development.
+                    </p>
+                    <div class="department-focus">
+                        <h4>Academic focus</h4>
+                        <ul>
+                            <li>Programming logic and software development</li>
+                            <li>Web technologies and database concepts</li>
+                            <li>Application design and project-based learning</li>
+                        </ul>
+                    </div>
+                    <p class="department-outcome"><strong>Grow toward:</strong> junior software, web and application development pathways.</p>
+                    <a class="department-link" href="coursesprog.html">Explore BCA studies <span aria-hidden="true">→</span></a>
+                </article>
+
+                <article class="department-card department-card-mca">
+                    <div class="department-card-top">
+                        <span class="department-code">MCA</span>
+                        <span class="department-index" aria-hidden="true">03</span>
+                    </div>
+                    <div class="department-icon" aria-hidden="true">
+                        <svg viewBox="0 0 48 48"><path d="M24 5 5 15l19 10 19-10L24 5Z"/><path d="m12 19v10c7 6 17 6 24 0V19M43 16v14"/></svg>
+                    </div>
+                    <h3>Advanced Computing</h3>
+                    <p class="department-degree">Master of Computer Applications</p>
+                    <p class="department-summary">
+                        Deepen your computing expertise and develop the ability to design,
+                        build and evaluate software systems for evolving industry needs.
+                    </p>
+                    <div class="department-focus">
+                        <h4>Academic focus</h4>
+                        <ul>
+                            <li>Advanced programming and software engineering</li>
+                            <li>Data management and application architecture</li>
+                            <li>Cloud, AI and other emerging technologies</li>
+                        </ul>
+                    </div>
+                    <p class="department-outcome"><strong>Grow toward:</strong> software, systems, data and cloud-focused roles.</p>
+                    <a class="department-link" href="coursesprog.html">Explore MCA studies <span aria-hidden="true">→</span></a>
+                </article>
+            </div>
         </div>
+    </section>
 
-        <div class="department-card">
-            <span class="department-code">B.Com</span>
-            <h3>Commerce</h3>
-            <p>Study accounting, finance, taxation, economics and commerce.</p>
+    <section class="departments-cta" aria-labelledby="department-cta-title">
+        <div>
+            <p class="departments-kicker">TAKE THE NEXT STEP</p>
+            <h2 id="department-cta-title">Find the program that fits your ambition.</h2>
+            <p>Explore course information or learn about applying to ASM NextGen Technical Campus.</p>
         </div>
-
-        <div class="department-card">
-            <span class="department-code">B.Sc</span>
-            <h3>Information Technology</h3>
-            <p>Learn IT, networking, databases, programming and emerging technologies.</p>
+        <div class="departments-cta-actions">
+            <a class="departments-button departments-button-primary" href="coursesprog.html">View courses <span aria-hidden="true">→</span></a>
+            <a class="departments-button departments-button-outline" href="addmission.html">Explore admissions <span aria-hidden="true">→</span></a>
         </div>
-
-        <div class="department-card">
-            <span class="department-code">MBA</span>
-            <h3>Management Studies</h3>
-            <p>Build skills in finance, marketing, human resources and management.</p>
-        </div>
-
-    
-<div class="department-card">
-    <span class="department-code">MCA</span>
-
-    <h3>Master of Computer Applications</h3>
-
-    <p>
-        Learn programming, software engineering, cloud computing,
-        database management and application development.
-    </p>
-
-    <button type="button"
-            class="view-details-btn"
-            aria-expanded="false">
-        View Details
-    </button>
-
-    <div id="mca-details" class="course-details" hidden>
-
-        <h3>About MCA</h3>
-        <p>
-            MCA is a postgraduate course focused on computer
-            applications, programming and software development.
-        </p>
-
-        <h3>Subjects and Skills</h3>
-        <ul>
-            <li>Python and Java Programming</li>
-            <li>Database Management Systems</li>
-            <li>Software Engineering</li>
-            <li>Web Development</li>
-            <li>Cloud Computing</li>
-            <li>Artificial Intelligence and Data Science</li>
-        </ul>
-
-        <h3>Career Opportunities</h3>
-        <ul>
-            <li>Software Developer</li>
-            <li>Web Developer</li>
-            <li>Cloud Engineer</li>
-            <li>Data Analyst</li>
-            <li>System Analyst</li>
-        </ul>
-
-        <p><strong>Course Duration:</strong> Generally 2 years, subject to university rules.</p>
-
-    </div>
-</div>
-
-
-    </div>
-</section>
+    </section>
+</main>
 <footer class="site-footer">
     <div class="site-footer-grid">
         <section class="site-footer-about">
@@ -219,7 +195,5 @@
 </footer>
 
 <script src="js/site.js" defer></script>
-<script src="js/script.js"></script>
-
 </body>
 </html>
