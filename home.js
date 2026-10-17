@@ -1,6 +1,35 @@
 const rotatingWord = document.querySelector("[data-rotating-word]");
 const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+const initializeBackToTop = () => {
+  const backToTopButton = document.querySelector(".home-back-to-top");
+  if (!backToTopButton) return;
+
+  const updateBackToTopVisibility = () => {
+    const isVisible = window.scrollY > 480;
+    backToTopButton.classList.toggle("is-visible", isVisible);
+    backToTopButton.setAttribute("aria-hidden", String(!isVisible));
+    backToTopButton.tabIndex = isVisible ? 0 : -1;
+  };
+
+  window.addEventListener("scroll", updateBackToTopVisibility, { passive: true });
+
+  backToTopButton.addEventListener("click", () => {
+    window.scrollTo({
+      top: 0,
+      behavior: reduceMotion ? "auto" : "smooth"
+    });
+  });
+
+  updateBackToTopVisibility();
+};
+
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initializeBackToTop, { once: true });
+} else {
+  initializeBackToTop();
+}
+
 if (rotatingWord) {
   const words = ["tomorrow.", "with purpose.", "with confidence."];
   let wordIndex = 0;

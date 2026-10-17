@@ -616,9 +616,32 @@ textarea {
     box-shadow: 0 0 0 3px rgb(16 63 104 / 10%);
 }
 
+.form-field input::placeholder,
+.form-field textarea::placeholder {
+    color: #8795a5;
+}
+
+.form-field input[aria-invalid="true"],
+.form-field textarea[aria-invalid="true"] {
+    border-color: #d92d20;
+    background: #fffafa;
+    box-shadow: 0 0 0 3px rgb(217 45 32 / 8%);
+}
+
+.form-field input[aria-invalid="false"],
+.form-field textarea[aria-invalid="false"] {
+    border-color: #16834a;
+}
+
 .field-error {
     min-height: 18px;
     color: #b42318;
+    font-size: 12px;
+}
+
+.message-count {
+    align-self: flex-end;
+    color: var(--muted);
     font-size: 12px;
 }
 
@@ -644,6 +667,140 @@ textarea {
 
 .enquiry-form .submit-button {
     justify-self: start;
+}
+
+.enquiry-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 8% 16%, rgb(255 255 255 / 68%), transparent 32%),
+        radial-gradient(ellipse at 92% 85%, rgb(45 139 213 / 12%), transparent 36%),
+        linear-gradient(135deg, #eaf4fb, #f5f9fd 52%, #e8f4fa);
+}
+
+.enquiry-container {
+    position: relative;
+    max-width: 820px;
+    padding: clamp(24px, 5vw, 46px);
+    border-color: rgb(215 226 237 / 85%);
+}
+
+.enquiry-eyebrow {
+    display: block;
+    width: fit-content;
+    margin: 0 auto 12px;
+    padding: 6px 12px;
+    border: 1px solid rgb(23 105 170 / 18%);
+    border-radius: 999px;
+    background: #eff7fc;
+    color: var(--blue);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+}
+
+.enquiry-container .section-heading {
+    font-size: clamp(26px, 4vw, 34px);
+}
+
+.enquiry-intro {
+    max-width: 520px;
+    margin: 0 auto 30px;
+    line-height: 1.75;
+}
+
+.enquiry-form {
+    gap: 20px 18px;
+}
+
+.form-field {
+    gap: 8px;
+}
+
+.form-field label {
+    font-size: 13px;
+    letter-spacing: 0.01em;
+}
+
+.form-field input,
+.form-field textarea {
+    min-height: 49px;
+    padding: 12px 15px;
+    border-color: #d8e2ec;
+    background: #fbfdff;
+    transition:
+        border-color 250ms ease,
+        box-shadow 250ms ease,
+        background-color 250ms ease,
+        transform 250ms ease;
+}
+
+.form-field textarea {
+    min-height: 145px;
+    line-height: 1.6;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    border-color: var(--blue);
+    background: #fff;
+    box-shadow: 0 7px 20px rgb(23 105 170 / 9%), 0 0 0 3px rgb(23 105 170 / 10%);
+}
+
+.field-error {
+    min-height: 0;
+    line-height: 1.45;
+}
+
+.field-error:not(:empty) {
+    padding: 7px 10px;
+    border-radius: 7px;
+    background: #fff3f1;
+}
+
+.message-count {
+    font-variant-numeric: tabular-nums;
+}
+
+.form-status {
+    padding: 13px 15px;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    line-height: 1.55;
+}
+
+.form-status.error {
+    border-color: #ffd0ca;
+}
+
+.form-status.success {
+    border-color: #b8e3c7;
+}
+
+.enquiry-form .submit-button {
+    min-width: 190px;
+    justify-self: center;
+    gap: 12px;
+    padding: 12px 20px;
+}
+
+.submit-arrow {
+    display: inline-block;
+    font-size: 18px;
+    line-height: 1;
+    transition: transform 250ms ease;
+}
+
+.submit-button:hover .submit-arrow {
+    transform: translateX(4px);
+}
+
+.enquiry-note {
+    margin: 18px auto 0;
+    color: var(--muted);
+    font-size: 12px;
+    line-height: 1.6;
+    text-align: center;
 }
 
 /* =========================
@@ -840,6 +997,10 @@ footer {
         justify-self: stretch;
     }
 
+    .enquiry-note {
+        max-width: 32ch;
+    }
+
     .modal-content {
         padding: 28px 20px;
     }
@@ -887,5 +1048,305 @@ footer {
         scroll-behavior: auto !important;
         transition-duration: 0.01ms !important;
         animation-duration: 0.01ms !important;
+    }
+}
+
+/* =========================
+   SLOW WORD REVEALS & POLISHED INTERACTIONS
+========================= */
+
+.faculty-word-reveal .faculty-word {
+    display: inline-block;
+    margin-inline-end: 0.24em;
+    opacity: 0;
+    transform: translateY(14px) scale(0.97);
+    transition:
+        opacity 700ms ease,
+        transform 850ms cubic-bezier(0.2, 0.75, 0.25, 1);
+    transition-delay: var(--word-delay, 0ms);
+}
+
+.faculty-word-reveal.is-visible .faculty-word {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.title-label,
+.page-title h2,
+.page-title p,
+.section-heading,
+.enquiry-intro {
+    will-change: transform;
+}
+
+.page-title {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+}
+
+.page-title::before {
+    position: absolute;
+    z-index: -1;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 0%, rgb(255 255 255 / 68%), transparent 68%);
+    content: "";
+    pointer-events: none;
+}
+
+.title-label {
+    border-color: rgb(23 105 170 / 30%);
+    background: rgb(255 255 255 / 72%);
+    box-shadow: 0 8px 24px rgb(7 25 48 / 7%);
+    transition: transform 400ms ease, box-shadow 400ms ease;
+}
+
+.title-label:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 28px rgb(7 25 48 / 11%);
+}
+
+.faculty-search input {
+    transition:
+        border-color 300ms ease,
+        box-shadow 300ms ease,
+        transform 300ms ease,
+        background-color 300ms ease;
+}
+
+.faculty-search input:focus {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 28px rgb(23 105 170 / 13%), 0 0 0 4px rgb(23 105 170 / 9%);
+}
+
+.faculty-section {
+    position: relative;
+    overflow: hidden;
+    background:
+        radial-gradient(ellipse at 12% 12%, rgb(45 139 213 / 7%), transparent 34%),
+        radial-gradient(ellipse at 88% 76%, rgb(23 105 170 / 6%), transparent 32%),
+        var(--paper);
+}
+
+.faculty-card {
+    isolation: isolate;
+    overflow: hidden;
+    border-color: rgb(215 226 237 / 90%);
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgb(7 25 48 / 7%);
+    transition:
+        transform 500ms cubic-bezier(0.2, 0.75, 0.25, 1),
+        box-shadow 500ms ease,
+        border-color 350ms ease,
+        background-color 350ms ease;
+}
+
+.faculty-card::before {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 18%;
+    left: 18%;
+    height: 3px;
+    border-radius: 0 0 5px 5px;
+    background: linear-gradient(90deg, var(--blue), #64c5ed);
+    content: "";
+    opacity: 0;
+    transform: scaleX(0.35);
+    transition: opacity 350ms ease, transform 500ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.faculty-card:hover,
+.faculty-card:focus-within {
+    transform: translateY(-9px);
+    border-color: rgb(45 139 213 / 55%);
+    box-shadow: 0 22px 46px rgb(7 63 105 / 15%);
+}
+
+.faculty-card:hover::before,
+.faculty-card:focus-within::before {
+    opacity: 1;
+    transform: scaleX(1);
+}
+
+.faculty-photo {
+    position: relative;
+    border: 4px solid #fff;
+    box-shadow: 0 0 0 2px rgb(45 139 213 / 25%), 0 9px 22px rgb(7 25 48 / 12%);
+    transition:
+        transform 600ms cubic-bezier(0.2, 0.75, 0.25, 1),
+        box-shadow 450ms ease;
+}
+
+.faculty-photo img {
+    transition: transform 800ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.faculty-card:hover .faculty-photo,
+.faculty-card:focus-within .faculty-photo {
+    transform: translateY(-3px);
+    box-shadow: 0 0 0 4px rgb(45 139 213 / 18%), 0 14px 28px rgb(7 25 48 / 16%);
+}
+
+.faculty-card:hover .faculty-photo img,
+.faculty-card:focus-within .faculty-photo img {
+    transform: scale(1.08);
+}
+
+.faculty-card h3 {
+    transition: color 300ms ease, transform 400ms ease;
+}
+
+.faculty-card:hover h3,
+.faculty-card:focus-within h3 {
+    color: var(--blue);
+    transform: translateY(-2px);
+}
+
+.designation {
+    display: inline-flex;
+    align-items: center;
+    min-height: 30px;
+    padding: 4px 12px;
+    border: 1px solid rgb(45 139 213 / 16%);
+    border-radius: 999px;
+    background: rgb(232 244 250 / 75%);
+}
+
+.three-dots-btn {
+    transition:
+        background-color 250ms ease,
+        color 250ms ease,
+        transform 300ms ease,
+        box-shadow 300ms ease;
+}
+
+.three-dots-btn:hover,
+.faculty-card-menu.open .three-dots-btn {
+    transform: rotate(90deg);
+    box-shadow: 0 5px 13px rgb(23 105 170 / 17%);
+}
+
+.faculty-dropdown {
+    z-index: 2;
+    transform-origin: top right;
+    animation: faculty-menu-in 180ms ease both;
+}
+
+@keyframes faculty-menu-in {
+    from {
+        opacity: 0;
+        transform: translateY(-5px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.view-details,
+.submit-button {
+    min-height: 44px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--blue), var(--bright-blue));
+    box-shadow: 0 7px 16px rgb(23 105 170 / 18%);
+    transition:
+        background 300ms ease,
+        box-shadow 300ms ease,
+        transform 300ms cubic-bezier(0.2, 0.75, 0.25, 1);
+}
+
+.view-details:hover,
+.submit-button:hover {
+    background: linear-gradient(135deg, var(--navy), var(--blue));
+    box-shadow: 0 11px 22px rgb(7 25 48 / 22%);
+    transform: translateY(-3px);
+}
+
+.view-details:active,
+.submit-button:active {
+    transform: translateY(-1px) scale(0.98);
+}
+
+.faculty-card.faculty-reveal {
+    opacity: 0;
+    transform: translateY(24px) scale(0.985);
+    transition:
+        opacity 750ms ease,
+        transform 850ms cubic-bezier(0.2, 0.75, 0.25, 1),
+        box-shadow 500ms ease,
+        border-color 350ms ease;
+    transition-delay: var(--card-delay, 0ms);
+}
+
+.faculty-card.faculty-reveal.is-visible {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.faculty-card.faculty-reveal.is-visible:hover,
+.faculty-card.faculty-reveal.is-visible:focus-within {
+    transform: translateY(-9px) scale(1);
+}
+
+.modal {
+    backdrop-filter: blur(8px);
+    animation: faculty-backdrop-in 250ms ease both;
+}
+
+.modal-content {
+    animation: faculty-modal-in 450ms cubic-bezier(0.2, 0.75, 0.25, 1) both;
+}
+
+@keyframes faculty-backdrop-in {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes faculty-modal-in {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.97);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.enquiry-container {
+    border-radius: 18px;
+    box-shadow: 0 16px 42px rgb(7 25 48 / 9%);
+    transition: transform 400ms ease, box-shadow 400ms ease;
+}
+
+.enquiry-container:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 22px 48px rgb(7 25 48 / 12%);
+}
+
+.form-field input,
+.form-field textarea {
+    border-radius: 10px;
+}
+
+.form-field input:focus,
+.form-field textarea:focus {
+    transform: translateY(-1px);
+    box-shadow: 0 7px 18px rgb(23 105 170 / 9%), 0 0 0 3px rgb(23 105 170 / 10%);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .faculty-word-reveal .faculty-word {
+        opacity: 1;
+        transform: none;
+        transition: none;
+    }
+
+    .faculty-card.faculty-reveal {
+        opacity: 1;
+        transform: none;
     }
 }

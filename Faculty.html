@@ -151,6 +151,7 @@
         <section class="enquiry-section" id="enquiry">
             <div class="enquiry-container">
 
+                <span class="enquiry-eyebrow">WE'RE HERE TO HELP</span>
                 <h2 class="section-heading">Faculty Enquiry Form</h2>
 
                 <p class="enquiry-intro">
@@ -167,9 +168,11 @@
                             id="enquiryName"
                             name="name"
                             type="text"
+                            autocomplete="name"
                             required
                             minlength="2"
                             maxlength="60"
+                            aria-describedby="nameError"
                         >
 
                         <small class="field-error" id="nameError"></small>
@@ -182,8 +185,10 @@
                             id="enquiryEmail"
                             name="email"
                             type="email"
+                            autocomplete="email"
                             required
                             maxlength="100"
+                            aria-describedby="emailError"
                         >
 
                         <small class="field-error" id="emailError"></small>
@@ -197,10 +202,12 @@
                             name="phone"
                             type="tel"
                             inputmode="numeric"
+                            autocomplete="tel"
                             pattern="[6-9][0-9]{9}"
                             maxlength="10"
                             required
                             placeholder="10-digit mobile number"
+                            aria-describedby="phoneError"
                         >
 
                         <small class="field-error" id="phoneError"></small>
@@ -216,6 +223,8 @@
                             required
                             minlength="3"
                             maxlength="100"
+                            placeholder="How can we help?"
+                            aria-describedby="subjectError"
                         >
 
                         <small class="field-error" id="subjectError"></small>
@@ -230,9 +239,12 @@
                             required
                             minlength="10"
                             maxlength="1000"
+                            placeholder="Tell us a little more about your question..."
+                            aria-describedby="messageError enquiryMessageCount"
                         ></textarea>
 
                         <small class="field-error" id="messageError"></small>
+                        <small class="message-count" id="enquiryMessageCount" aria-live="off">0 / 1000 characters</small>
                     </div>
 
                     <p
@@ -243,10 +255,12 @@
                     ></p>
 
                     <button type="submit" class="submit-button">
-                        Validate Enquiry
+                        <span>Validate Enquiry</span>
+                        <span class="submit-arrow" aria-hidden="true">→</span>
                     </button>
 
                 </form>
+                <p class="enquiry-note">This demo checks your details but does not send or store your enquiry.</p>
             </div>
         </section>
 

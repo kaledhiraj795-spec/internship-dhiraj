@@ -15,6 +15,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const enquiryForm = document.getElementById("enquiryForm");
     const formStatus = document.getElementById("formStatus");
+    const enquiryMessage = document.getElementById("enquiryMessage");
+    const enquiryMessageCount = document.getElementById("enquiryMessageCount");
 
     const STORAGE_KEY = "facultySearchPreference";
     let facultyData = [];
@@ -23,13 +25,67 @@ document.addEventListener("DOMContentLoaded", () => {
     const requiredElements = [
         searchInput, facultyGrid, searchMessage, noResults,
         loadingMessage, facultyModal, modalPhoto, modalName,
-        modalDetails, closeModalButton, enquiryForm, formStatus
+        modalDetails, closeModalButton, enquiryForm, formStatus,
+        enquiryMessage, enquiryMessageCount
     ];
 
     if (requiredElements.some(element => !element)) {
         console.error("Required HTML elements are missing.");
         return;
     }
+
+    const motionObserver = "IntersectionObserver" in window
+        ? new IntersectionObserver(entries => {
+            entries.forEach(entry => {
+                if (!entry.isIntersecting) return;
+
+                entry.target.classList.add("is-visible");
+                motionObserver.unobserve(entry.target);
+            });
+        }, { threshold: 0.18, rootMargin: "0px 0px -35px 0px" })
+        : null;
+
+    function observeMotion(element) {
+        if (motionObserver) {
+            motionObserver.observe(element);
+        } else {
+            element.classList.add("is-visible");
+        }
+    }
+
+    function prepareWordReveals() {
+        document.querySelectorAll(
+            ".page-title .title-label, .page-title h2, .page-title p, " +
+            ".faculty-section .section-heading, .enquiry-container .section-heading, " +
+            ".enquiry-intro"
+        ).forEach(element => {
+            const accessibleText = element.textContent.trim().replace(/\s+/g, " ");
+            const words = accessibleText.split(" ");
+
+            if (!accessibleText || words.length < 2) return;
+
+            element.classList.add("faculty-word-reveal");
+            if (!element.hasAttribute("aria-label")) {
+                element.setAttribute("aria-label", accessibleText);
+            }
+
+            element.replaceChildren(...words.map((word, index) => {
+                const wordElement = document.createElement("span");
+                wordElement.className = "faculty-word";
+                wordElement.textContent = word;
+                wordElement.setAttribute("aria-hidden", "true");
+                wordElement.style.setProperty(
+                    "--word-delay",
+                    `${Math.min(index * 75, 750)}ms`
+                );
+                return wordElement;
+            }));
+
+            observeMotion(element);
+        });
+    }
+
+    prepareWordReveals();
 
     // 1. Load faculty data from JSON.
     async function loadFacultyData() {
@@ -86,10 +142,14 @@ document.addEventListener("DOMContentLoaded", () => {
             card.remove();
         });
 
-        list.forEach(faculty => {
+        list.forEach((faculty, index) => {
             const card = document.createElement("article");
-            card.className = "faculty-card";
+            card.className = "faculty-card faculty-reveal";
             card.dataset.facultyId = String(faculty.id);
+            card.style.setProperty(
+                "--card-delay",
+                `${Math.min(index * 90, 450)}ms`
+            );
 
             // Faculty photo.
             const photoWrapper = document.createElement("div");
@@ -188,6 +248,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             card.appendChild(detailsButton);
             facultyGrid.insertBefore(card, noResults);
+            observeMotion(card);
         });
 
         loadingMessage.style.display = "none";
@@ -419,6 +480,15 @@ document.addEventListener("DOMContentLoaded", () => {
         }
     ];
 
+    function updateMessageCount() {
+        const characterCount = enquiryMessage.value.length;
+        enquiryMessageCount.textContent =
+            `${characterCount} / ${enquiryMessage.maxLength} characters`;
+    }
+
+    enquiryMessage.addEventListener("input", updateMessageCount);
+    updateMessageCount();
+
     function validateField(rule) {
         const input = document.getElementById(rule.id);
         const errorElement = document.getElementById(rule.errorId);
@@ -478,6 +548,7 @@ document.addEventListener("DOMContentLoaded", () => {
             "Validation successful. This demo does not send your enquiry. A backend is required to submit it.";
 
         enquiryForm.reset();
+        updateMessageCount();
 
         fieldRules.forEach(rule => {
             const errorElement = document.getElementById(rule.errorId);
