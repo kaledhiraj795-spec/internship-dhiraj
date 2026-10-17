@@ -6,20 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="theme-color" content="#0b2d52">
     <meta name="description" content="Explore the campus and student life at ASM College.">
-    <title>Campus &amp; Student Life | ASM College</title>
-    <script src="campus.js" defer></script>
+    <title>Campus &amp; Student Life | ASM NextGen Technical Campus</title>
+    <script src="js/campus.js" defer></script>
 
     <style>
         :root {
-            --navy: #0b2d52;
-            --blue: #1769aa;
-            --bright-blue: #2f8fe5;
-            --pale-blue: #eaf4fd;
-            --white: #fff;
-            --ink: #172b42;
-            --muted: #61748a;
-            --line: #dce8f3;
-            --shadow: 0 16px 42px rgba(11, 45, 82, .09);
+            --navy: #002B4D;
+            --blue: #0079BD;
+            --bright-blue: #1389C6;
+            --pale-blue: #E8F4FA;
+            --white: #FFFFFF;
+            --ink: #333333;
+            --muted: #626F7B;
+            --paper: #F7F9FC;
+            --line: #D7E3EB;
+            --shadow: 0 16px 42px rgba(0, 43, 77, .09);
         }
 
         * { box-sizing: border-box; }
@@ -527,29 +528,33 @@
 }
 
     </style>
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/campus-events.css">
 </head>
 
 <body>
     
-<header class="site-header">
-
-    <a class="brand" href="home.html" aria-label="ASM College home">
-        <img src="image/asm-logo.png"
-             alt="ASM College Logo"
-             class="college-logo">
-    </a>
-
-    <nav class="main-nav" aria-label="Main navigation">
-        <a href="home.html">Home</a>
-        <a href="about.html">About</a>
-        <a href="campus.html" class="active">Campus</a>
-        <a href="coursesprog.html">Courses &amp; Programs</a>
-        <a href="contact.html">Contact Us</a>
-        <a href="placement.html">Placements</a>
-        <a href="department.html">Department</a>
-        <a href="Faculty.html">Faculty</a>
-    </nav>
-
+<header class="site-shared-header">
+    <div class="site-header-inner">
+        <a class="site-brand" href="home.html" aria-label="ASM NextGen home">
+            <img src="image/asm-logo.png" alt="ASM NextGen Technical Campus">
+            <span>ASM NextGen Technical Campus</span>
+        </a>
+        <button class="site-menu-toggle" type="button" data-site-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="site-navigation" id="site-navigation" data-site-navigation aria-label="Main navigation">
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="coursesprog.html">Courses &amp; Programs</a>
+            <a href="addmission.html">Admissions</a>
+            <a href="campus.html" aria-current="page">Campus</a>
+            <a href="Faculty.html">Faculty</a>
+            <a href="department.html">Departments</a>
+            <a href="placement.html">Placements</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+    </div>
 </header>
 
 
@@ -583,6 +588,114 @@
                         <span class="icon-box" aria-hidden="true">03</span>
                         <h2>Room to discover</h2>
                         <p>Explore new interests and find opportunities to grow beyond the classroom.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="campus-events campus-events-opening" aria-labelledby="campus-moments-title">
+            <div class="campus-events-inner">
+                <div class="campus-events-heading">
+                    <p class="campus-events-kicker">A look back at campus life</p>
+                    <h2 id="campus-moments-title">Moments that bring us together</h2>
+                    <p>From new beginnings to shared achievements, explore some of the experiences that shape our campus community.</p>
+                </div>
+
+                <div class="campus-event-grid campus-event-grid-opening">
+                    <article class="campus-event-card">
+                        <figure class="campus-event-photo">
+                            <img src="image/event1.jpg" alt="Guests and speakers at the ASM Aarambh 2025 induction program" fetchpriority="high">
+                            <figcaption><span>01</span><span>New beginnings</span></figcaption>
+                        </figure>
+                        <div class="campus-event-copy">
+                            <p class="campus-event-label">Induction program</p>
+                            <h3>Aarambh 2025</h3>
+                            <p>Welcoming students into a new academic journey with inspiration, learning, and a shared vision for the future.</p>
+                        </div>
+                    </article>
+
+                    <article class="campus-event-card">
+                        <figure class="campus-event-photo">
+                            <img src="image/event2.jpg" alt="Students and faculty gathered for the Aarambh 2025 program" loading="lazy">
+                            <figcaption><span>02</span><span>Campus community</span></figcaption>
+                        </figure>
+                        <div class="campus-event-copy">
+                            <p class="campus-event-label">Student gathering</p>
+                            <h3>Aarambh Together</h3>
+                            <p>Students and educators come together to celebrate the start of a new chapter at ASM NextGen.</p>
+                        </div>
+                    </article>
+
+                    <article class="campus-event-card">
+                        <figure class="campus-event-photo">
+                            <img src="image/event3.jpg" alt="ASM faculty and guests sharing a recognition moment" loading="lazy">
+                            <figcaption><span>03</span><span>Shared achievement</span></figcaption>
+                        </figure>
+                        <div class="campus-event-copy">
+                            <p class="campus-event-label">Recognition</p>
+                            <h3>Celebrating Contributions</h3>
+                            <p>A moment to recognize the people and partnerships that encourage learning and progress across campus.</p>
+                        </div>
+                    </article>
+
+                    <article class="campus-event-card">
+                        <figure class="campus-event-photo">
+                            <img src="image/event4.jpg" alt="Campus guests and students celebrating together at an ASM event" loading="lazy">
+                            <figcaption><span>04</span><span>Campus celebration</span></figcaption>
+                        </figure>
+                        <div class="campus-event-copy">
+                            <p class="campus-event-label">Campus life</p>
+                            <h3>Learning Beyond the Classroom</h3>
+                            <p>Celebrating the conversations, experiences, and connections that make campus life memorable.</p>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="campus-events campus-events-featured" aria-labelledby="featured-events-title">
+            <div class="campus-events-inner">
+                <div class="campus-events-heading">
+                    <p class="campus-events-kicker">Culture, wellbeing &amp; community</p>
+                    <h2 id="featured-events-title">Events worth experiencing</h2>
+                    <p>Celebrate traditions, make space for wellbeing, and recognize the people who make our community stronger.</p>
+                </div>
+
+                <div class="campus-event-grid campus-event-grid-featured">
+                    <article class="campus-event-card campus-event-card-featured">
+                        <figure class="campus-event-photo">
+                            <img src="image/Dandiya.jpg" alt="ASM community celebrating Dandiya together" loading="lazy">
+                            <figcaption><span>05</span><span>Culture</span></figcaption>
+                        </figure>
+                        <div class="campus-event-copy">
+                            <p class="campus-event-label">Tradition &amp; celebration</p>
+                            <h3>Dandiya</h3>
+                            <p>An evening of music, color, and traditional dance that brings students and the campus community together.</p>
+                        </div>
+                    </article>
+
+                    <article class="campus-event-card campus-event-card-featured">
+                        <figure class="campus-event-photo">
+                            <img src="image/Yoga day.jpg" alt="Students taking part in a group yoga session" loading="lazy">
+                            <figcaption><span>06</span><span>Wellbeing</span></figcaption>
+                        </figure>
+                        <div class="campus-event-copy">
+                            <p class="campus-event-label">Health &amp; mindfulness</p>
+                            <h3>Yoga Day</h3>
+                            <p>Students come together to practice yoga, build healthy habits, and make time for balance and wellbeing.</p>
+                        </div>
+                    </article>
+
+                    <article class="campus-event-card campus-event-card-featured">
+                        <figure class="campus-event-photo">
+                            <img src="image/Womens Day.jpg" alt="Women and campus guests at an ASM Women's Day celebration" loading="lazy">
+                            <figcaption><span>07</span><span>Inspiration</span></figcaption>
+                        </figure>
+                        <div class="campus-event-copy">
+                            <p class="campus-event-label">Community &amp; recognition</p>
+                            <h3>Women’s Day</h3>
+                            <p>Recognizing the achievements, leadership, and contributions of women in our community and beyond.</p>
+                        </div>
                     </article>
                 </div>
             </div>
@@ -678,7 +791,38 @@
         </section>
     </main>
 
-   
+    <footer class="site-footer">
+        <div class="site-footer-grid">
+            <section class="site-footer-about">
+                <a class="site-footer-brand" href="home.html" aria-label="ASM NextGen home">
+                    <img src="image/asm-logo.png" alt="ASM NextGen Technical Campus">
+                </a>
+                <h2>ASM NextGen Technical Campus</h2>
+                <p>Future-ready education through innovation, industry-focused learning and academic excellence in Talegaon Dabhade, Pune.</p>
+            </section>
+            <nav class="site-footer-links" aria-label="Explore ASM">
+                <h2>Explore</h2>
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="coursesprog.html">Courses &amp; Programs</a>
+                <a href="addmission.html">Admissions</a>
+                <a href="campus.html">Campus</a>
+                <a href="Faculty.html">Faculty</a>
+                <a href="department.html">Departments</a>
+                <a href="placement.html">Placements</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <section class="site-footer-contact">
+                <h2>Get in touch</h2>
+                <address>Survey No. 401/1, Talegaon Dabhade, Pune, Maharashtra 410506</address>
+                <p><a href="tel:+919028076028">+91 90280 76028</a></p>
+                <p><a href="mailto:admission.asmnextgen@asmedu.org">admission.asmnextgen@asmedu.org</a></p>
+            </section>
+        </div>
+        <div class="site-footer-bottom">
+            <p>&copy; 2026 ASM Group of Institutes. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="js/site.js" defer></script>
 </body>
 </html>
-

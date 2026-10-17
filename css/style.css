@@ -223,11 +223,102 @@
   transition: all 0.3s ease;
 }
 
-.filter-btn.active, 
+.filter-btn.active,
 .filter-btn:hover {
   background-color: #0867b5;
   color: #ffffff;
   box-shadow: 0 4px 12px rgba(8, 103, 181, 0.25);
+}
+
+:root {
+  --navy: #002B4D;
+  --blue: #0079BD;
+  --bright-blue: #1389C6;
+  --pale-blue: #E8F4FA;
+  --ink: #333333;
+  --muted: #626F7B;
+  --paper: #F7F9FC;
+}
+
+.placement-hero {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
+  background: transparent;
+  color: var(--navy);
+  border-bottom-color: var(--bright-blue);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.placement-hero .placement-overlay {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  pointer-events: none;
+}
+
+.placement-hero .placement-hero-content {
+  position: relative;
+  z-index: 2;
+}
+
+.placement-hero .hero-buttons a {
+  position: relative;
+  z-index: 4;
+}
+
+.placement-hero .hero-content {
+  position: relative;
+  z-index: 1;
+}
+
+.placement-hero h1 {
+  color: var(--navy);
+}
+
+.placement-hero p {
+  color: var(--muted);
+}
+
+.placement-hero .badge {
+  background: rgba(232, 244, 250, 0.9);
+  color: var(--navy);
+  border-color: var(--blue);
+}
+
+.hero-buttons .btn-primary {
+  background: var(--blue);
+}
+
+.hero-buttons .btn-primary:hover {
+  background: var(--bright-blue);
+}
+
+.stats-section {
+  background: var(--paper);
+}
+
+.stat-box .stat-icon,
+.filter-btn {
+  color: var(--blue);
+}
+
+.stat-box h2,
+.section-title {
+  color: var(--navy);
+}
+
+.filter-btn {
+  border-color: var(--blue);
+}
+
+.filter-btn.active,
+.filter-btn:hover {
+  background: var(--blue);
+  color: #FFFFFF;
 }
 
 /* Student Cards Grid */
@@ -246,80 +337,167 @@
   padding: 24px 20px;
   width: 260px;
   box-shadow: 0 4px 16px rgba(6, 59, 105, 0.08);
-  border:none;
-}
-/* Placement Hero Section */
-.placement-hero {
-    position: relative;
-    background-image: url('../image/campus.png.jpg');
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-    padding: 80px 20px;
-    text-align: center;
-    overflow: hidden;
+  border: none;
+  transition: transform 0.3s ease, box-shadow 0.3s ease
 }
 
-/* Faint Image Overlay */
-.placement-hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(255, 255, 255, 0.65);
-    z-index: 1;
-}
-
-/* Bring Text and Buttons above Overlay */
-.placement-hero > * {
+/* Content Container (Text ani Buttons Image Chya Var Display Sathi) */
+.placement-hero .hero-content,
+.placement-hero-content {
     position: relative;
     z-index: 2;
-}
-/* Student Profile Image Styling */
-.student-card img {
-    width: 90px;
-    height: 90px;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 12px;
-    border: 3px solid #e2e8f0;
-    transition: transform 0.3s ease;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-/* Hover Effect - Card & Image Zoom */
-.student-card:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 12px 24px rgba(6, 59, 105, 0.15);
+/* Text Headings Fix */
+.placement-hero h1,
+.placement-hero p,
+.placement-hero .badge {
+    color: #ffffff !important;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
 }
 
-.student-card:hover img {
-    transform: scale(1.05);
-    border-color: #0b2545;
+/* Industry Tie-Ups Section Base */
+.industry-tieups-section {
+  padding: 72px 20px;
+  background: linear-gradient(180deg, #f8fafc 0%, #f1f5f9 100%);
 }
 
-/* Student Information Text */
-.student-card h3 {
-    font-size: 18px;
-    color: #1e293b;
-    font-weight: 600;
-    margin-bottom: 4px;
+.industry-tieups-inner {
+  width: min(1100px, 100%);
+  margin: 0 auto;
 }
 
-.student-card p {
-    font-size: 14px;
-    color: #64748b;
-    margin-bottom: 4px;
+.industry-tieups-section h2 {
+  margin: 0 0 14px;
+  color: #0f172a;
+  text-align: center;
+  font-size: clamp(1.8rem, 3vw, 2.4rem);
+  line-height: 1.2;
 }
 
-/* Package Highlight Styling */
-.student-card .package {
-    font-weight: 700;
-    color: #0b2545;
-    background-color: #f1f5f9;
-    padding: 4px 10px;
-    border-radius: 20px;
-    display: inline-block;
-    margin-top: 6px;
+.industry-tieups-intro {
+  max-width: 900px;
+  margin: 0 auto 40px auto;
+  color: #475569;
+  line-height: 1.65;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.industry-tieups-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.industry-partner-card {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  width: 100%;
+  padding: 18px 24px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition:
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+}
+
+.industry-partner-card::before {
+  position: absolute;
+  top: 16px;
+  bottom: 16px;
+  left: 0;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: #0052cc;
+  content: "";
+  opacity: 0;
+  transform: scaleY(0.6);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.industry-partner-card:hover {
+  transform: translateX(18px) !important;
+  border-color: #0052cc;
+  box-shadow: 0 8px 25px rgba(0, 82, 204, 0.15);
+}
+
+.industry-partner-card:hover::before,
+.industry-partner-card:focus-within::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+.industry-partner-logo {
+  display: flex;
+  flex: 0 0 65px;
+  align-items: center;
+  justify-content: center;
+  min-width: 65px;
+  height: 42px;
+  border-radius: 8px;
+  background: #eef2f7;
+  color: #0052cc;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+}
+
+.industry-partner-name {
+  flex: 0 0 200px;
+  min-width: 200px;
+  margin: 0;
+  color: #0f172a;
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.4;
+  overflow-wrap: anywhere;
+}
+
+.industry-partner-description {
+  flex: 1;
+  min-width: 0;
+  margin: 0;
+  color: #475569;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 760px) {
+  .industry-partner-card {
+    flex-wrap: wrap;
+    gap: 12px 16px;
+    padding: 18px;
+  }
+
+  .industry-partner-name {
+    flex: 1 1 200px;
+    min-width: 0;
+  }
+
+  .industry-partner-description {
+    flex-basis: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .industry-tieups-section {
+    padding: 52px 16px;
+  }
+
+  .industry-tieups-inner {
+    width: 100%;
+  }
+
+  .industry-partner-card {
+    gap: 12px 16px;
+    padding: 16px;
+  }
 }

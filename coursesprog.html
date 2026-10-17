@@ -6,18 +6,19 @@
     <title>Courses & Programs | ASM College</title>
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
     <script src="js/coursesprog.js" defer></script>
     <style>
         :root {
             color-scheme: light;
-            --navy: #082847;
-            --blue: #103f68;
-            --bright-blue: #1b5d91;
-            --pale-blue: #e8f1f8;
-            --ink: #172b3f;
-            --muted: #617386;
-            --white: #fff;
-            --paper: #f5f8fb;
+            --navy: #002B4D;
+            --blue: #0079BD;
+            --bright-blue: #1389C6;
+            --pale-blue: #E8F4FA;
+            --ink: #333333;
+            --muted: #626F7B;
+            --white: #FFFFFF;
+            --paper: #F7F9FC;
             --font-body: "Roboto", sans-serif;
             --font-heading: "Raleway", sans-serif;
             --border-color: #cbd5e1;
@@ -82,30 +83,27 @@
 </head>
 <body>
 
-    <header>
-        <a href="home.html" class="logo">
-            <img src="image/asm-logo.png" alt="ASM College Logo" style="height: 40px; width: auto; border-radius: 50%; background: white; padding: 2px;">
-        </a>
-        <nav>
-            <ul>
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="coursesprog.html" class="active">Courses & Programs</a></li>
-                <li><a href="admission.html">Admissions</a></li>
-                <li><a href="contact.html">Contact</a></li>
-                <li class="dropdown">
-                    <button class="dropbtn" aria-label="Menu">
-                        <span><span></span><span></span><span></span></span>
-                    </button>
-                    <div class="dropdown-content">
-                        <a href="campus.html">Campus Life</a>
-                        <a href="department.html">Departments</a>
-                        <a href="faculty.html">Faculty Directory</a>
-                        <a href="placement.html">Placements</a>
-                    </div>
-                </li>
-            </ul>
-        </nav>
+    <header class="site-shared-header">
+        <div class="site-header-inner">
+            <a class="site-brand" href="home.html" aria-label="ASM NextGen home">
+                <img src="image/asm-logo.png" alt="ASM NextGen Technical Campus">
+                <span>ASM NextGen Technical Campus</span>
+            </a>
+            <button class="site-menu-toggle" type="button" data-site-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-navigation" id="site-navigation" data-site-navigation aria-label="Main navigation">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="coursesprog.html" aria-current="page">Courses &amp; Programs</a>
+                <a href="addmission.html">Admissions</a>
+                <a href="campus.html">Campus</a>
+                <a href="Faculty.html">Faculty</a>
+                <a href="department.html">Departments</a>
+                <a href="placement.html">Placements</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </div>
     </header>
 
     <section class="hero">
@@ -156,16 +154,46 @@
             </ul>
             <h4 style="margin-bottom: 0.4rem; color: var(--navy);">Key Highlights:</h4>
             <ul class="modal-highlights" id="modal-highlights-list"></ul>
-            <a href="admission.html" id="modal-action-btn" class="btn" style="display: block; text-align: center; margin-top: 1rem;">Apply Now</a>
+            <a href="addmission.html" id="modal-action-btn" class="btn" style="display: block; text-align: center; margin-top: 1rem;">Apply Now</a>
         </div>
     </div>
 
-    <footer>
-        <p>&copy; 2026 ASM College. All rights reserved.</p>
+    <footer class="site-footer">
+        <div class="site-footer-grid">
+            <section class="site-footer-about">
+                <a class="site-footer-brand" href="home.html" aria-label="ASM NextGen home">
+                    <img src="image/asm-logo.png" alt="ASM NextGen Technical Campus">
+                </a>
+                <h2>ASM NextGen Technical Campus</h2>
+                <p>Future-ready education through innovation, industry-focused learning and academic excellence in Talegaon Dabhade, Pune.</p>
+            </section>
+            <nav class="site-footer-links" aria-label="Explore ASM">
+                <h2>Explore</h2>
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="coursesprog.html">Courses &amp; Programs</a>
+                <a href="addmission.html">Admissions</a>
+                <a href="campus.html">Campus</a>
+                <a href="Faculty.html">Faculty</a>
+                <a href="department.html">Departments</a>
+                <a href="placement.html">Placements</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <section class="site-footer-contact">
+                <h2>Get in touch</h2>
+                <address>Survey No. 401/1, Talegaon Dabhade, Pune, Maharashtra 410506</address>
+                <p><a href="tel:+919028076028">+91 90280 76028</a></p>
+                <p><a href="mailto:admission.asmnextgen@asmedu.org">admission.asmnextgen@asmedu.org</a></p>
+            </section>
+        </div>
+        <div class="site-footer-bottom">
+            <p>&copy; 2026 ASM Group of Institutes. All rights reserved.</p>
+        </div>
     </footer>
 
     <button id="back-to-top" title="Go to top">↑</button>
 
+    <script src="js/site.js" defer></script>
     <script>
         const backToTopBtn = document.getElementById("back-to-top");
         window.addEventListener("scroll", () => {

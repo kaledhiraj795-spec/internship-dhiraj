@@ -7,178 +7,212 @@
 
     <!-- Main Centralized Stylesheet -->
     <link rel="stylesheet" href="css/asm.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/placement.css">
 
     <!-- FontAwesome Icons for Visuals -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-</head>
-<body>
-
-   <!-- TOP CONTACT BAR -->
-<div style="background-color: #ffffff; padding: 6px 40px; display: flex; justify-content: space-between; align-items: center; font-size: 0.85rem; border-bottom: 1px solid #eee; color: #333;">
-  <div>
-    <span style="margin-right: 15px;">📞 +91 90280 76028</span>
-    <span>✉️ admission.asmnextgen@asmedu.org</span>
-  </div>
-  <div>
-    <a href="#" style="color: #666; text-decoration: none; margin-right: 10px;">Campus Media</a> | 
-    <a href="#" style="color: #666; text-decoration: none; margin-left: 10px;">FRA - Fee Structure</a>
-  </div>
-</div>
-
-<!-- MAIN HEADER WITH ASM LOGO -->
-<header style="background-color: #ffffff; padding: 15px 40px; display: flex; align-items: center; justify-content: space-between; border-bottom: 2px solid #f0f0f0;">
-  <!-- Left ASM Logo -->
-  <div style="display: flex; align-items: center; gap: 15px;">
-    <img src="image/asm-logo.png" alt="ASM Logo" style="height: 65px; object-fit: contain;">
-  </div>
-
-  <!-- Center Text Info -->
-  <div style="text-align: center; color: #1a237e;">
-    <small style="font-size: 0.75rem; letter-spacing: 1px; font-weight: 600; color: #444; display: block; margin-bottom: 2px;">AUDYOGIK SHIKSHAN MANDAL</small>
-    <h2 style="margin: 0; font-size: 1.4rem; font-weight: 800; color: #0d1b2a;">ASM's NEXTGEN TECHNICAL CAMPUS</h2>
-    <span style="font-size: 0.75rem; color: #555; display: block; margin-top: 2px;">Talegaon Dabhade, Maval, Pune</span>
-    <p style="margin: 3px 0 0 0; font-size: 0.7rem; color: #666; font-weight: 500;">Approved by AICTE | Affiliated to Savitribai Phule Pune University | DTE CODE - 16355</p>
-  </div>
-
-  <!-- Right Legacy Logo -->
-  <div>
-    <img src="image/42-years.png" alt="42 Years Legacy" style="height: 60px; object-fit: contain;">
-  </div>
-</header>
-
-    <!-- GRAPHICAL SUB-NAVBAR -->
-    <nav class="sub-nav" style="
-        background: #1e293b;
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom: 3px solid #f97316;
-        text-align: center;
-        padding: 14px 10px;
-        box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-    ">
-        <span style="display: block; color: #94a3b8; font-weight: 600; margin-bottom: 10px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1.5px;">
-            ASM Technical Campus
-        </span>
-
-        <div style="display: flex; justify-content: center; align-items: center; gap: 15px; flex-wrap: wrap;">
-            <a href="home.html" class="nav-item">Home</a>
-            <a href="about.html" class="nav-item">About Us</a>
-            <a href="coursesprog.html" class="nav-item">Programs</a>
-            <a href="Faculty.html" class="nav-item">Faculty</a>
-            <a href="department.html" class="nav-item">Departments</a>
-            <a href="addmission.html" class="nav-item">Admissions</a>
-            <a href="placement.html" class="nav-item active-link">Placements</a>
-            <a href="contact.html" class="nav-item">Contact Us</a>
-        </div>
-    </nav>
-
     <style>
-        .nav-item {
-            color: #f1f5f9;
-            text-decoration: none;
-            font-size: 0.95rem;
-            font-weight: 500;
-            padding: 6px 14px;
-            border-radius: 6px;
-            transition: all 0.3s ease;
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(255, 255, 255, 0.05);
+        .placement-hero {
+            background:
+                linear-gradient(rgba(0, 32, 59, 0.5), rgba(0, 32, 59, 0.68)),
+                url("image/campus.png.jpg") center / cover no-repeat !important;
         }
 
-        .nav-item:hover {
-            background: #f97316;
-            color: #ffffff !important;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(249, 115, 22, 0.4);
-        }
-
-        .active-link {
-            background: #f97316 !important;
-            color: #ffffff !important;
-            font-weight: 600;
-            box-shadow: 0 2px 8px rgba(249, 115, 22, 0.3);
+        .placement-hero::before {
+            content: none;
         }
     </style>
+</head>
+<body class="page-placement">
+
+    <header class="site-shared-header">
+        <div class="site-header-inner">
+            <a class="site-brand" href="home.html" aria-label="ASM NextGen home">
+                <img src="image/asm-logo.png" alt="ASM NextGen Technical Campus">
+                <span>ASM NextGen Technical Campus</span>
+            </a>
+            <button class="site-menu-toggle" type="button" data-site-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-navigation" id="site-navigation" data-site-navigation aria-label="Main navigation">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="coursesprog.html">Courses &amp; Programs</a>
+                <a href="addmission.html">Admissions</a>
+                <a href="campus.html">Campus</a>
+                <a href="Faculty.html">Faculty</a>
+                <a href="department.html">Departments</a>
+                <a href="placement.html" aria-current="page">Placements</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </div>
+    </header>
 
     <main>
         <!-- Enhanced Hero Section -->
-        <section class="placement-hero">
-            <div class="hero-content">
-                <span class="badge">CAREER DEVELOPMENT & TRAINING</span>
-                <h1>Training & Placement Cell</h1>
-                <p>Empowering students with industry-driven skills, career guidance, and top placement opportunities at leading tech companies.</p>
-                
-                <div class="hero-buttons">
-                    <a href="#recruiters" class="btn-primary">Our Top Recruiters</a>
-                    <a href="#stats" class="btn-secondary" style="background-color: #0b2545; color: #ffffff; padding: 12px 24px; border-radius: 6px;
-                     text-decoration: none; font-weight: 600;">View Statistics</a>
-                </div>
-            </div>
-        </section> 
+       <section class="placement-hero">
+    <div class="placement-overlay"></div>
+    <div class="placement-hero-content">
+        <span class="badge">CAREER DEVELOPMENT & TRAINING</span>
+        <h1>Training & Placement Cell</h1>
+        <p>Empowering students with industry-driven skills, career guidance, and top placement opportunities at leading tech companies.</p>
+        <div class="hero-buttons">
+            <a href="#recruiters" class="btn btn-primary">Our Top Recruiters</a>
+            <a href="#stats" class="btn btn-secondary">View Statistics</a>
+        </div>
+    </div>
+</section>
 
          <!-- Placement Statistics Section -->
-        <section id="stats" class="stats-section">
+        <section id="stats" class="stats-section" aria-labelledby="placement-stats-title">
+          <div class="placement-section-heading">
+            <p class="placement-section-eyebrow">Outcomes that inspire</p>
+            <h2 id="placement-stats-title">Placement at a glance</h2>
+            <p>Discover the opportunities and industry network supporting our graduates.</p>
+          </div>
           <div class="stats-container">
-            <div class="stat-box">
-              <i class="fa-solid fa-trophy stat-icon"></i> 
-              <h2 class="counter" data-target="18">18+</h2>
-              <p class="stat-label">Highest Package (LPA)</p>
+            <div class="stat-box stat-box-package">
+              <span class="stat-icon-wrap" aria-hidden="true"><i class="fa-solid fa-trophy stat-icon"></i></span>
+              <p class="stat-label">Highest Package</p>
+              <h3 class="counter" data-target="18" data-suffix="+" data-decimals="0" aria-label="18 plus lakh per annum">0+</h3>
+              <p class="stat-context">LPA</p>
             </div>
-            <div class="stat-box">
-              <i class="fa-solid fa-building stat-icon"></i> 
-              <h2 class="counter" data-target="200">200+</h2>
+            <div class="stat-box stat-box-recruiters">
+              <span class="stat-icon-wrap" aria-hidden="true"><i class="fa-solid fa-building stat-icon"></i></span>
               <p class="stat-label">Top Recruiters</p>
+              <h3 class="counter" data-target="200" data-suffix="+" data-decimals="0" aria-label="More than 200 recruiters">0+</h3>
+              <p class="stat-context">Hiring partners</p>
             </div>
-            <div class="stat-box">
-              <i class="fa-solid fa-user-graduate stat-icon"></i>
-              <h2 class="counter" data-target="60000">60000+</h2>
+            <div class="stat-box stat-box-alumni">
+              <span class="stat-icon-wrap" aria-hidden="true"><i class="fa-solid fa-user-graduate stat-icon"></i></span>
               <p class="stat-label">Alumni Placed</p>
+              <h3 class="counter" data-target="60000" data-suffix="+" data-decimals="0" aria-label="More than 60,000 alumni placed">0+</h3>
+              <p class="stat-context">Across our network</p>
             </div>
           </div>
         </section>
 <!-- ================= PLACED STUDENTS HALL OF FAME ================= -->
- <!-- 1. FILTER BUTTONS -->
-<div class="filter-container">
-  <button class="filter-btn active" data-filter="all">All</button>
-  <button class="filter-btn" data-filter="mca">MCA</button>
-  <button class="filter-btn" data-filter="bca">BCA</button>
-</div>
-
-<!-- STUDENTS GRID -->
-<div class="students-grid">
-  <!-- Student Card 1 -->
-  <div class="student-card" data-category="mca">
-    <div class="student-img-box">
-      <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=300" alt="Rahul Sharma" 
-      style="width: 160px; height: 160px; object-fit: cover; border-radius: 50%;">
-    </div>
-    <h3>Rahul Sharma</h3>
-    <p class="branch">MCA (2025 Passout)</p>
-    <div class="company-badge">TCS</div>
-    <p class="package">Package: 7.5 LPA</p>
+<section class="placed-students-section" aria-labelledby="placed-students-title">
+  <div class="placement-section-heading">
+    <p class="placement-section-eyebrow">Our people, our pride</p>
+    <h2 id="placed-students-title">Meet our placed students</h2>
+    <p>Celebrate the graduates building their careers with leading employers.</p>
   </div>
 
-  <!-- Student Card 2 -->
-  <div class="student-card" data-category="bca">
-    <div class="student-img-box">
-      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=300" alt="Priya Patil" style="width: 160px; height: 160px; object-fit: cover; border-radius: 50%;">
-    </div>
-    <h3>Priya Patil</h3>
-    <p class="branch">BCA (2025 Passout)</p>
-    <div class="company-badge">Infosys</div>
-    <p class="package">Package: 6.0 LPA</p>
+  <div class="filter-container" role="group" aria-label="Filter placed students by program">
+    <button class="filter-btn active" type="button" data-filter="all" aria-pressed="true">All</button>
+    <button class="filter-btn" type="button" data-filter="mca" aria-pressed="false">MCA</button>
+    <button class="filter-btn" type="button" data-filter="bca" aria-pressed="false">BCA</button>
   </div>
 
-  <!-- Student Card 3 -->
-  <div class="student-card" data-category="mca">
-    <div class="student-img-box">
-      <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=300" alt="Amit Deshmukh" style="width: 160px; height: 160px; object-fit: cover; border-radius: 50%;">
-    </div>
-    <h3>Amit Deshmukh</h3>
-    <p class="branch">MCA (2025 Passout)</p>
-    <div class="company-badge">XDE Studios</div>
-    <p class="package">Package: 12.0 LPA</p>
+  <div class="students-grid">
+    <article class="student-card" data-category="mca">
+      <div class="student-img-box">
+        <img src="https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?w=400&amp;auto=format&amp;fit=crop&amp;q=85" alt="Rahul Sharma" loading="lazy">
+      </div>
+      <p class="student-kicker">Class of 2025</p>
+      <h3>Rahul Sharma</h3>
+      <p class="branch">MCA graduate</p>
+      <div class="student-outcome">
+        <span class="company-badge" aria-label="Placed at TCS">TCS</span>
+        <p class="package"><span>Package</span><strong>7.5 LPA</strong></p>
+      </div>
+    </article>
+
+    <article class="student-card" data-category="bca">
+      <div class="student-img-box">
+        <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&amp;auto=format&amp;fit=crop&amp;q=85" alt="Priya Patil" loading="lazy">
+      </div>
+      <p class="student-kicker">Class of 2025</p>
+      <h3>Priya Patil</h3>
+      <p class="branch">BCA graduate</p>
+      <div class="student-outcome">
+        <span class="company-badge company-badge-infosys" aria-label="Placed at Infosys">Infosys</span>
+        <p class="package"><span>Package</span><strong>6.0 LPA</strong></p>
+      </div>
+    </article>
+
+    <article class="student-card" data-category="mca">
+      <div class="student-img-box">
+        <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=400&amp;auto=format&amp;fit=crop&amp;q=85" alt="Amit Deshmukh" loading="lazy">
+      </div>
+      <p class="student-kicker">Class of 2025</p>
+      <h3>Amit Deshmukh</h3>
+      <p class="branch">MCA graduate</p>
+      <div class="student-outcome">
+        <span class="company-badge company-badge-xde" aria-label="Placed at XDE Studios">XDE Studios</span>
+        <p class="package"><span>Package</span><strong>12.0 LPA</strong></p>
+      </div>
+    </article>
   </div>
-</div>
+</section>
+
+<section class="industry-tieups-section" aria-labelledby="industry-tieups-title">
+  <div class="industry-tieups-inner">
+    <h2 id="industry-tieups-title">Industry Tie-Ups</h2>
+    <p class="industry-tieups-intro">
+      ASM NextGen collaborates with globally recognized technology leaders and industry partners to provide students with internationally recognized certifications, practical learning, cloud technologies, Artificial Intelligence, ERP systems, cloud computing and emerging digital skills required by today's industries.
+    </p>
+
+    <div class="industry-tieups-list" role="list" aria-label="Industry partners">
+      <article class="industry-partner-card" role="listitem">
+        <span class="industry-partner-logo" aria-hidden="true">PHN</span>
+        <h3 class="industry-partner-name">PHN Technology</h3>
+        <p class="industry-partner-description">PHN Technology partners with innovators to advance educational solutions, empowering learners and building a technology-driven future.</p>
+      </article>
+
+      <article class="industry-partner-card" role="listitem">
+        <span class="industry-partner-logo" aria-hidden="true">AA</span>
+        <h3 class="industry-partner-name">Automation Anywhere</h3>
+        <p class="industry-partner-description">Exposure to Robotic Process Automation (RPA) and Intelligent Automation through structured learning modules, bot-building exercises and workflow-oriented learning.</p>
+      </article>
+
+      <article class="industry-partner-card" role="listitem">
+        <span class="industry-partner-logo" aria-hidden="true">AWS</span>
+        <h3 class="industry-partner-name">AWS Academy</h3>
+        <p class="industry-partner-description">Academic learning pathways in Cloud Foundations, Cloud Security, Machine Learning and Generative AI with guided labs and certification readiness.</p>
+      </article>
+
+      <article class="industry-partner-card" role="listitem">
+        <span class="industry-partner-logo" aria-hidden="true">SAP</span>
+        <h3 class="industry-partner-name">SAP</h3>
+        <p class="industry-partner-description">Enterprise Resource Planning (ERP) focused learning covering business process mapping, enterprise applications and ERP implementation concepts.</p>
+      </article>
+
+      <article class="industry-partner-card" role="listitem">
+        <span class="industry-partner-logo" aria-hidden="true">MS</span>
+        <h3 class="industry-partner-name">Microsoft</h3>
+        <p class="industry-partner-description">Learning pathways focused on Cloud Computing, Productivity Platforms, AI Fundamentals, Digital Credentials and practical projects.</p>
+      </article>
+
+      <article class="industry-partner-card" role="listitem">
+        <span class="industry-partner-logo" aria-hidden="true">OA</span>
+        <h3 class="industry-partner-name">Oracle Academy</h3>
+        <p class="industry-partner-description">Oracle Academy develops future technology professionals through industry-recognized curriculum, database technologies and enterprise solutions.</p>
+      </article>
+
+      <article class="industry-partner-card" role="listitem">
+        <span class="industry-partner-logo" aria-hidden="true">HBP</span>
+        <h3 class="industry-partner-name">Harvard Business Publishing</h3>
+        <p class="industry-partner-description">Leadership development resources, management insights, business case studies and globally recognized learning content from Harvard Business School.</p>
+      </article>
+
+      <article class="industry-partner-card" role="listitem">
+        <span class="industry-partner-logo" aria-hidden="true">IBM</span>
+        <h3 class="industry-partner-name">IBM</h3>
+        <p class="industry-partner-description">Skill-based learning in Artificial Intelligence, Data Science, Cybersecurity and emerging technologies through digital learning experiences.</p>
+      </article>
+
+      <article class="industry-partner-card" role="listitem">
+        <span class="industry-partner-logo" aria-hidden="true">N</span>
+        <h3 class="industry-partner-name">NASSCOM</h3>
+        <p class="industry-partner-description">Alignment with industry competency frameworks, national skill initiatives, certification pathways and future technology ecosystem development.</p>
+      </article>
+    </div>
+  </div>
+</section>
 
 <!-- BROCHURE LINK -->
 <div style="text-align: center; margin-top: 25px;">
@@ -201,8 +235,8 @@
                 <div class="department-card">
                     <div class="card-icon"><i class="fa-solid fa-sack-dollar"></i></div>
                     <span class="department-code">Highest Package</span>
-                    <h3>12 LPA</h3>
-                    <p>Highest offer bagged by our students in software engineering roles.</p>
+                    <h3>18+ LPA</h3>
+                    <p>Top package earned by our students in software engineering roles.</p>
                 </div>
 
                 <div class="department-card">
@@ -300,10 +334,42 @@
         </section>
     </main>
 
-    <footer style="background-color: #0f172a; color: #fff; text-align: center; padding: 20px; margin-top: 40px;">
-        <p>&copy; 2026 ASM's Nextgen Technical Campus. All Rights Reserved.</p>
+    <footer class="site-footer">
+        <div class="site-footer-grid">
+            <section class="site-footer-about" aria-labelledby="placement-footer-heading">
+                <a class="site-footer-brand" href="home.html" aria-label="ASM NextGen home">
+                    <img src="image/asm-logo.png" alt="ASM NextGen Technical Campus">
+                </a>
+                <h2 id="placement-footer-heading">ASM NextGen Technical Campus</h2>
+                <p>ASM Group of Institutes nurtures future-ready professionals through innovation, industry-focused learning and academic excellence.</p>
+            </section>
+            <nav class="site-footer-links" aria-labelledby="placement-footer-links">
+                <h2 id="placement-footer-links">Explore</h2>
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="coursesprog.html">Courses &amp; Programs</a>
+                <a href="addmission.html">Admissions</a>
+                <a href="campus.html">Campus</a>
+                <a href="Faculty.html">Faculty</a>
+                <a href="department.html">Departments</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <section class="site-footer-contact" aria-labelledby="placement-footer-contact">
+                <h2 id="placement-footer-contact">Get in touch</h2>
+                <address>Survey No. 401/1, Talegaon Dabhade, Pune, Maharashtra 410506</address>
+                <p><a href="tel:+919028076028">+91 90280 76028</a></p>
+                <p><a href="mailto:admission.asmnextgen@asmedu.org">admission.asmnextgen@asmedu.org</a></p>
+            </section>
+        </div>
+        <div class="site-footer-bottom">
+            <p>&copy; 2026 ASM Group of Institutes. All rights reserved.</p>
+            <nav aria-label="Legal links">
+                <a href="https://asmnext.edu.in/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                <a href="https://asmnext.edu.in/terms-and-conditions" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
+            </nav>
+        </div>
     </footer>
-<script src="/js/placement.js" defer></script>
-<link rel="stylesheet" href="css/style.css">
+    <script src="js/site.js" defer></script>
+<script src="js/placement.js" defer></script>
 </body>
 </html>

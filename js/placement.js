@@ -1,59 +1,88 @@
- document.addEventListener("DOMContentLoaded", () => {
-  
-  // 1. COUNTER ANIMATION LOGIC
-  const counters = document.querySelectorAll(".counter");
-  
-  counters.forEach((counter) => {
-    counter.innerText = "0";
-    const target = +counter.getAttribute("data-target");
+ const counters = document.querySelectorAll(".page-placement .counter[data-target]");
 
-    const updateCounter = () => {
-      const count = +counter.innerText.replace("+", "");
-      const increment = Math.ceil(target / 50);
+ function animateCounter(counter) {
+   const target = Number(counter.dataset.target);
+   const suffix = counter.dataset.suffix || "";
+   const decimals = Number(counter.dataset.decimals || 0);
+   const duration = 1800;
+   const formatter = new Intl.NumberFormat("en-US", {
+     maximumFractionDigits: decimals,
+     minimumFractionDigits: decimals
+   });
 
-      if (count < target) {
-        counter.innerText = `${Math.ceil(count + increment)}`;
-        setTimeout(updateCounter, 30);
-      } else {
-        counter.innerText = `${target}+`;
-      }
-    };
+   if (!Number.isFinite(target)) {
+     console.error("Placement counter has an invalid data-target.", counter);
+     return;
+   }
 
-    updateCounter();
-  });
+   const startTime = performance.now();
+   const update = (now) => {
+     const progress = Math.min((now - startTime) / duration, 1);
+     const easedProgress = 1 - Math.pow(1 - progress, 4);
+     const currentValue = target * easedProgress;
+     counter.textContent = `${formatter.format(progress === 1 ? target : currentValue)}${suffix}`;
 
+     if (progress < 1) {
+       requestAnimationFrame(update);
+     }
+   };
 
-  // 2. STUDENT FILTER LOGIC (All / MCA / BCA)
-  const filterButtons = document.querySelectorAll(".filter-btn");
-  const studentCards = document.querySelectorAll(".student-card");
+   requestAnimationFrame(update);
+ }
 
-  filterButtons.forEach((button) => {
-    button.addEventListener("click", () => {
-      // Active class change karne
-      filterButtons.forEach((btn) => btn.classList.remove("active"));
-      button.classList.add("active");
+ counters.forEach((counter) => {
+   const target = Number(counter.dataset.target);
+   const suffix = counter.dataset.suffix || "";
 
-      const category = button.getAttribute("data-filter");
+   if (!Number.isFinite(target)) {
+     console.error("Placement counter has an invalid data-target.", counter);
+     return;
+   }
 
-      studentCards.forEach((card) => {
-        const studentCategory = card.getAttribute("data-category");
-        if (category === "all" || studentCategory === category) {
-          card.style.display = "block";
-        } else {
-          card.style.display = "none";
-        }
-      });
+   counter.textContent = `0${suffix}`;
+ });
+
+ if ("IntersectionObserver" in window) {
+   const statsObserver = new IntersectionObserver((entries, observer) => {
+     entries.forEach((entry) => {
+       if (!entry.isIntersecting) return;
+
+       counters.forEach(animateCounter);
+       observer.disconnect();
     });
-  });
+   }, { threshold: 0.35 });
 
+   const statsSection = document.getElementById("stats");
+   if (statsSection) {
+     statsObserver.observe(statsSection);
+   }
+ } else {
+   counters.forEach(animateCounter);
+ }
 
-  // 3. DOWNLOAD BROCHURE VIA PRINT TO PDF
-  const brochureBtn = document.getElementById("download-brochure");
-  if (brochureBtn) {
-    brochureBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      window.print();
-    });
-  }
+ const filterButtons = document.querySelectorAll(".page-placement .filter-btn[data-filter]");
+ const studentCards = document.querySelectorAll(".page-placement .student-card[data-category]");
 
-});
+ filterButtons.forEach((button) => {
+   button.addEventListener("click", () => {
+     const category = button.dataset.filter;
+
+     filterButtons.forEach((filterButton) => {
+       const isActive = filterButton === button;
+       filterButton.classList.toggle("active", isActive);
+       filterButton.setAttribute("aria-pressed", String(isActive));
+     });
+
+     studentCards.forEach((card) => {
+       card.hidden = category !== "all" && card.dataset.category !== category;
+     });
+   });
+ });
+
+ const brochureButton = document.getElementById("download-brochure");
+ if (brochureButton) {
+   brochureButton.addEventListener("click", (event) => {
+     event.preventDefault();
+     window.print();
+   });
+ }

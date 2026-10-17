@@ -8,6 +8,37 @@ document.addEventListener("DOMContentLoaded", () => {
     const pgSection = document.querySelector("#pg-section");
     const clubsSection = document.querySelector("#clubs-section");
 
+    if (!ugSection || !pgSection || !clubsSection) {
+        const staticCourseCards = document.querySelectorAll(".course-card[data-category]");
+
+        if (courseSearchInput && categorySelect && staticCourseCards.length > 0) {
+            const filterStaticCourses = () => {
+                const query = courseSearchInput.value.trim().toLowerCase();
+                const selectedCategory = categorySelect.value;
+                let visibleCount = 0;
+
+                staticCourseCards.forEach((card) => {
+                    const matchesQuery = card.textContent.toLowerCase().includes(query);
+                    const matchesCategory = selectedCategory === "all" ||
+                        card.dataset.category === selectedCategory;
+                    card.hidden = !matchesQuery || !matchesCategory;
+
+                    if (!card.hidden) visibleCount++;
+                });
+
+                if (noResultsMessage) {
+                    noResultsMessage.hidden = visibleCount !== 0;
+                }
+            };
+
+            courseSearchInput.addEventListener("input", filterStaticCourses);
+            categorySelect.addEventListener("change", filterStaticCourses);
+            filterStaticCourses();
+        }
+
+        return;
+    }
+
     const ugHeading = document.querySelector("#ug-heading");
     const pgHeading = document.querySelector("#pg-heading");
     const clubsHeading = document.querySelector("#clubs-heading");

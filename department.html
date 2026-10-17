@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Departments | ASM College</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="css/site.css">
 
     <style>
         * {
@@ -13,7 +14,7 @@
         }
 
         .navbar {
-            background: #0b3d91;
+            background: var(--navy);
             color: white;
             padding: 20px;
             display: flex;
@@ -47,7 +48,7 @@
 
         .navbar nav a:hover {
             text-decoration: underline;
-            color: #dbeafe;
+            color: var(--pale-blue);
         }
 
         @media (max-width: 600px) {
@@ -68,18 +69,27 @@
 
 <body>
 
-<header class="navbar">
-    <div class="logo">ASM College</div>
-    <nav class="main-nav">
+<header class="site-shared-header">
+    <div class="site-header-inner">
+        <a class="site-brand" href="home.html" aria-label="ASM NextGen home">
+            <img src="image/asm-logo.png" alt="ASM NextGen Technical Campus">
+            <span>ASM NextGen Technical Campus</span>
+        </a>
+        <button class="site-menu-toggle" type="button" data-site-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+            <span></span><span></span><span></span>
+        </button>
+        <nav class="site-navigation" id="site-navigation" data-site-navigation aria-label="Main navigation">
             <a href="home.html">Home</a>
-            <a href="about.html">About</a>
+            <a href="about.html">About Us</a>
+            <a href="coursesprog.html">Courses &amp; Programs</a>
+            <a href="addmission.html">Admissions</a>
             <a href="campus.html">Campus</a>
-            <a href="coursesprog.html">Courses & Programs</a>
-            <a href="contacts.html">Contact Us</a>
-            <a href="placements.html">Placements</a>
-            <a href="department.html">Department</a>
-            <a href="Faculty.html" class="active">Faculty</a>
+            <a href="Faculty.html">Faculty</a>
+            <a href="department.html" aria-current="page">Departments</a>
+            <a href="placement.html">Placements</a>
+            <a href="contact.html">Contact Us</a>
         </nav>
+    </div>
 </header>
 
 <section class="hero">
@@ -175,11 +185,41 @@
 
     </div>
 </section>
-<footer>
-    <p>2026 ASM College.</p>
+<footer class="site-footer">
+    <div class="site-footer-grid">
+        <section class="site-footer-about">
+            <a class="site-footer-brand" href="home.html" aria-label="ASM NextGen home">
+                <img src="image/asm-logo.png" alt="ASM NextGen Technical Campus">
+            </a>
+            <h2>ASM NextGen Technical Campus</h2>
+            <p>Future-ready education through innovation, industry-focused learning and academic excellence in Talegaon Dabhade, Pune.</p>
+        </section>
+        <nav class="site-footer-links" aria-label="Explore ASM">
+            <h2>Explore</h2>
+            <a href="home.html">Home</a>
+            <a href="about.html">About Us</a>
+            <a href="coursesprog.html">Courses &amp; Programs</a>
+            <a href="addmission.html">Admissions</a>
+            <a href="campus.html">Campus</a>
+            <a href="Faculty.html">Faculty</a>
+            <a href="department.html">Departments</a>
+            <a href="placement.html">Placements</a>
+            <a href="contact.html">Contact Us</a>
+        </nav>
+        <section class="site-footer-contact">
+            <h2>Get in touch</h2>
+            <address>Survey No. 401/1, Talegaon Dabhade, Pune, Maharashtra 410506</address>
+            <p><a href="tel:+919028076028">+91 90280 76028</a></p>
+            <p><a href="mailto:admission.asmnextgen@asmedu.org">admission.asmnextgen@asmedu.org</a></p>
+        </section>
+    </div>
+    <div class="site-footer-bottom">
+        <p>&copy; 2026 ASM Group of Institutes. All rights reserved.</p>
+    </div>
 </footer>
 
-<script src="js/asm.js"></script>
+<script src="js/site.js" defer></script>
+<script src="js/script.js"></script>
 
 </body>
 </html>

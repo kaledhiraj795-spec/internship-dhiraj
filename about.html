@@ -3,282 +3,231 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#071930">
+    <meta name="description" content="Learn about ASM NextGen Technical Campus in Talegaon, Pune: its academic programs, campus facilities, and learning environment.">
     <title>About Us | ASM NextGen Technical Campus</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-        }
-
-        :root {
-            --primary: #0f172a;
-            --accent: #3b82f6;
-            --glow: #60a5fa;
-            --bg-gradient: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #3b82f6 100%);
-            --card-glass: rgba(255, 255, 255, 0.05);
-            --border-glass: rgba(255, 255, 255, 0.12);
-        }
-
-        body {
-            background-color: #090d16;
-            color: #f1f5f9;
-            min-height: 100vh;
-        }
-
-        /* Navbar Styling */
-        header {
-            background: rgba(15, 23, 42, 0.9);
-            backdrop-filter: blur(10px);
-            padding: 1.2rem 2.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            border-bottom: 1px solid var(--border-glass);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-        }
-
-        .logo {
-            color: #ffffff;
-            font-size: 1.5rem;
-            font-weight: 700;
-            text-decoration: none;
-            letter-spacing: 0.5px;
-            background: linear-gradient(to right, #60a5fa, #3b82f6);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        nav {
-            display: flex;
-            gap: 1.8rem;
-            align-items: center;
-        }
-
-        nav a {
-            color: #94a3b8;
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.95rem;
-            transition: color 0.3s ease;
-        }
-
-        nav a:hover, nav a.active-link {
-            color: #ffffff;
-        }
-
-        /* Hero Section */
-        .hero {
-            background: var(--bg-gradient);
-            padding: 6rem 2rem 4rem 2rem;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: rgba(59, 130, 246, 0.15);
-            filter: blur(100px);
-            border-radius: 50%;
-            top: -50px;
-            left: 50%;
-            transform: translateX(-50%);
-            z-index: 1;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .badge {
-            background: rgba(59, 130, 246, 0.15);
-            color: #60a5fa;
-            border: 1px solid rgba(59, 130, 246, 0.3);
-            padding: 0.4rem 1.2rem;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1.5px;
-            font-weight: 600;
-            display: inline-block;
-            margin-bottom: 1.5rem;
-        }
-
-        .hero h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: #ffffff;
-        }
-
-        .hero p {
-            font-size: 1.15rem;
-            color: #cbd5e1;
-            line-height: 1.7;
-        }
-
-        /* Main Container & Glassmorphism Grid */
-        .container {
-            max-width: 1200px;
-            margin: -3rem auto 4rem auto;
-            padding: 0 2rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-            gap: 2rem;
-        }
-
-        .glass-card {
-            background: var(--card-glass);
-            backdrop-filter: blur(16px);
-            border: 1px solid var(--border-glass);
-            border-radius: 20px;
-            padding: 2.5rem;
-            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
-            transition: transform 0.3s ease, border-color 0.3s ease;
-        }
-
-        .glass-card:hover {
-            transform: translateY(-8px);
-            border-color: rgba(96, 165, 250, 0.4);
-        }
-
-        .card-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1.2rem;
-            display: inline-block;
-        }
-
-        .glass-card h3 {
-            font-size: 1.5rem;
-            color: #ffffff;
-            margin-bottom: 1rem;
-        }
-
-        .glass-card p {
-            color: #94a3b8;
-            line-height: 1.7;
-            font-size: 1rem;
-        }
-
-        /* Interactive Mission/Vision Section */
-        .vision-mission-section {
-            max-width: 1200px;
-            margin: 4rem auto;
-            padding: 0 2rem;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 3rem;
-            color: #ffffff;
-        }
-
-        .vm-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2.5rem;
-        }
-
-        @media (max-width: 768px) {
-            .vm-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* Footer */
-        footer {
-            background: #060910;
-            border-top: 1px solid var(--border-glass);
-            text-align: center;
-            padding: 2rem;
-            color: #64748b;
-            font-size: 0.9rem;
-        }
-    </style>
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/about.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="page-about">
 
     <!-- Header & Navigation -->
-    <header>
-        <a href="./home.html" class="logo">ASM Technical Campus</a>
-        <nav>
-            <a href="./home.html" class="nav-item">Home</a>
-            <a href="./about.html" class="nav-item active-link">About Us</a>
-            <a href="./coursesprog.html" class="nav-item">Programs</a>
-            <a href="./Faculty.html" class="nav-item">Faculty</a>
-            <a href="./department.html" class="nav-item">Departments</a>
-            <a href="./addmission.html" class="nav-item">Admissions</a>
-            <a href="./placement.html" class="nav-item">Placements</a>
-            <a href="./contact.html" class="nav-item">Contact Us</a>
-        </nav>
+    <header class="site-shared-header">
+        <div class="site-header-inner">
+            <a class="site-brand" href="home.html" aria-label="ASM NextGen home">
+                <img src="image/asm-logo.png" alt="ASM NextGen Technical Campus">
+                <span>ASM NextGen Technical Campus</span>
+            </a>
+            <button class="site-menu-toggle" type="button" data-site-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-navigation" id="site-navigation" data-site-navigation aria-label="Main navigation">
+                <a href="home.html">Home</a>
+                <a href="about.html" aria-current="page">About Us</a>
+                <a href="coursesprog.html">Courses &amp; Programs</a>
+                <a href="addmission.html">Admissions</a>
+                <a href="campus.html">Campus</a>
+                <a href="Faculty.html">Faculty</a>
+                <a href="department.html">Departments</a>
+                <a href="placement.html">Placements</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+        </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <span class="badge">Excellence in Education</span>
-            <h1>About ASM Campus</h1>
-            <p>Pioneering technical education, modern engineering culture, and shaping industry-ready professionals through innovation and hands-on learning.</p>
-        </div>
-    </section>
+    <main class="about-page-main">
+        <section class="about-hero" aria-labelledby="about-hero-title">
+            <div class="about-hero-orb about-hero-orb-one" aria-hidden="true"></div>
+            <div class="about-hero-orb about-hero-orb-two" aria-hidden="true"></div>
+            <div class="about-hero-content">
+                <p class="about-eyebrow"><span></span> ASM Group of Institutes <span></span></p>
+                <h1 id="about-hero-title">Learning for a world <em>in motion.</em></h1>
+                <p>Discover ASM NextGen Technical Campus, where a strong academic foundation meets modern technology, practical learning, and a student-focused campus community.</p>
+                <div class="about-hero-actions">
+                    <a href="coursesprog.html" class="about-button about-button-primary">Explore programs <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="#about-story" class="about-button about-button-outline">Get to know us</a>
+                </div>
+            </div>
+            <div class="about-hero-location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Talegaon Dabhade, Pune</div>
+        </section>
 
-    <!-- Glassmorphism Feature Cards -->
-    <div class="container">
-        <div class="grid">
-            <div class="glass-card">
-                <div class="card-icon">🚀</div>
-                <h3>Our Legacy & Growth</h3>
-                <p>Established with a vision to impart quality education, ASM Technical Campus integrates rigorous academics with cutting-edge technological development.</p>
+        <section class="about-story-section" id="about-story" aria-labelledby="about-story-title">
+            <div class="about-content about-story-layout">
+                <div class="about-story-copy">
+                    <p class="about-section-eyebrow">A legacy with a future</p>
+                    <h2 id="about-story-title">Rooted in education.<br><span>Focused on what’s next.</span></h2>
+                    <p>Audyogik Shikshan Mandal (ASM) was established in 1983 with a commitment to preparing well-rounded professionals. Today, ASM Group of Institutes offers an education pathway from KG to Ph.D., helping learners build knowledge and confidence at every stage.</p>
+                    <p>ASM NextGen Technical Campus in Talegaon Dabhade brings that educational legacy into a technical learning environment, with programs that connect academic foundations to the needs of a changing world.</p>
+                    <a class="about-text-link" href="https://asmnext.edu.in/about-us" target="_blank" rel="noopener noreferrer">Read about ASM NextGen <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i></a>
+                </div>
+                <div class="about-story-visual">
+                    <img src="image/asm-campus-building.png" alt="ASM NextGen Technical Campus in Talegaon Dabhade" loading="lazy">
+                    <div class="about-story-caption"><span>Established</span><strong>1983</strong><small>ASM Group of Institutes</small></div>
+                    <span class="about-story-frame" aria-hidden="true"></span>
+                </div>
             </div>
-            <div class="glass-card">
-                <div class="card-icon">💡</div>
-                <h3>Innovation & R&D</h3>
-                <p>We foster a culture of creative problem solving where students build live web apps, machine learning models, and real-world software solutions.</p>
-            </div>
-            <div class="glass-card">
-                <div class="card-icon">🤝</div>
-                <h3>Industry Connect</h3>
-                <p>Regular interactions, technical workshops, and coding hackathons organized with top IT experts ensure our students stay ahead of industry standards.</p>
-            </div>
-        </div>
-    </div>
+        </section>
 
-    <!-- Vision & Mission Section -->
-    <section class="vision-mission-section">
-        <h2 class="section-title">Core Principles & Mission</h2>
-        <div class="vm-grid">
-            <div class="glass-card">
-                <h3>Our Vision</h3>
-                <p>To be a premier global institution recognized for outstanding academic delivery, technological innovation, and nurturing ethical leaders who transform society.</p>
+        <section class="about-facts-section" aria-label="ASM Group and campus facts">
+            <div class="about-content about-facts-grid">
+                <article class="about-fact">
+                    <span class="about-fact-icon"><i class="fa-solid fa-landmark" aria-hidden="true"></i></span>
+                    <strong>1983</strong>
+                    <span>ASM Group established</span>
+                </article>
+                <article class="about-fact">
+                    <span class="about-fact-icon"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i></span>
+                    <strong>B.E. · BCA · MCA</strong>
+                    <span>Technical campus programs</span>
+                </article>
+                <article class="about-fact">
+                    <span class="about-fact-icon"><i class="fa-solid fa-users" aria-hidden="true"></i></span>
+                    <strong>72,000+</strong>
+                    <span>ASM Group alumni working with leading companies</span>
+                </article>
             </div>
-            <div class="glass-card">
-                <h3>Our Mission</h3>
-                <p>To provide an immersive ecosystem combining technical mastery, critical thinking, and collaborative projects, preparing students to excel in a dynamic global workspace.</p>
+            <p class="about-facts-note">Alumni figure refers to the ASM Group of Institutes, as reported on the official ASM website.</p>
+        </section>
+
+        <section class="about-campus-section" aria-labelledby="about-campus-title">
+            <div class="about-content about-campus-layout">
+                <div class="about-campus-image">
+                    <img src="image/about.jpg" alt="ASM NextGen campus and its surroundings" loading="lazy">
+                    <span class="about-image-label"><i class="fa-solid fa-leaf" aria-hidden="true"></i> A campus surrounded by nature</span>
+                </div>
+                <div class="about-campus-copy">
+                    <p class="about-section-eyebrow">Space to learn and grow</p>
+                    <h2 id="about-campus-title">A calm setting.<br><span>A connected campus.</span></h2>
+                    <p>Set amid the greenery and scenic hills of Talegaon, ASM NextGen offers a welcoming environment for focused academic and professional growth.</p>
+                    <div class="about-feature-list">
+                        <article class="about-feature">
+                            <span><i class="fa-solid fa-chalkboard-user" aria-hidden="true"></i></span>
+                            <div><h3>Modern learning spaces</h3><p>Smart classrooms and advanced laboratories support technology-led teaching and practical exploration.</p></div>
+                        </article>
+                        <article class="about-feature">
+                            <span><i class="fa-solid fa-wifi" aria-hidden="true"></i></span>
+                            <div><h3>Resources for discovery</h3><p>ASM describes its campuses as Wi-Fi enabled, with libraries, computer centres, and facilities for sports and student life.</p></div>
+                        </article>
+                        <article class="about-feature">
+                            <span><i class="fa-solid fa-people-group" aria-hidden="true"></i></span>
+                            <div><h3>A student-focused community</h3><p>Learning, collaboration, and personal development come together in a supportive campus environment.</p></div>
+                        </article>
+                    </div>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section class="about-academics-section" aria-labelledby="about-academics-title">
+            <div class="about-content">
+                <div class="about-section-heading">
+                    <p class="about-section-eyebrow">Academic pathways</p>
+                    <h2 id="about-academics-title">Build a foundation for tomorrow.</h2>
+                    <p>ASM NextGen’s official campus information describes AICTE-approved B.E. programs alongside BCA and MCA study pathways.</p>
+                </div>
+                <div class="about-academic-grid">
+                    <article class="about-academic-card">
+                        <span class="about-academic-icon"><i class="fa-solid fa-robot" aria-hidden="true"></i></span>
+                        <span class="about-academic-tag">Engineering</span>
+                        <h3>Artificial Intelligence &amp; Machine Learning</h3>
+                        <p>Explore intelligent systems, data-led problem solving, and emerging AI technologies.</p>
+                        <a href="coursesprog.html">Explore courses <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </article>
+                    <article class="about-academic-card">
+                        <span class="about-academic-icon"><i class="fa-solid fa-laptop-code" aria-hidden="true"></i></span>
+                        <span class="about-academic-tag">Engineering</span>
+                        <h3>Computer Science &amp; Information Technology</h3>
+                        <p>Build computing knowledge and explore the systems and software that power connected industries.</p>
+                        <a href="coursesprog.html">Explore courses <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </article>
+                    <article class="about-academic-card">
+                        <span class="about-academic-icon"><i class="fa-solid fa-code" aria-hidden="true"></i></span>
+                        <span class="about-academic-tag">Computer applications</span>
+                        <h3>BCA &amp; MCA</h3>
+                        <p>Develop application and computing knowledge through undergraduate and postgraduate study.</p>
+                        <a href="coursesprog.html">Explore courses <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-principles-section" aria-labelledby="about-principles-title">
+            <div class="about-content">
+                <div class="about-section-heading">
+                    <p class="about-section-eyebrow">What guides us</p>
+                    <h2 id="about-principles-title">Learning with purpose.</h2>
+                </div>
+                <div class="about-principles-grid">
+                    <article class="about-principle-card">
+                        <span class="about-principle-icon"><i class="fa-solid fa-eye" aria-hidden="true"></i></span>
+                        <h3>Our vision</h3>
+                        <p>To nurture capable, thoughtful graduates who use knowledge, technology, and integrity to contribute to their communities and the wider world.</p>
+                    </article>
+                    <article class="about-principle-card">
+                        <span class="about-principle-icon"><i class="fa-solid fa-compass" aria-hidden="true"></i></span>
+                        <h3>Our mission</h3>
+                        <p>To provide a supportive technical education environment where students develop strong academic foundations, practical understanding, and the confidence to keep learning.</p>
+                    </article>
+                    <article class="about-principle-card">
+                        <span class="about-principle-icon"><i class="fa-solid fa-lightbulb" aria-hidden="true"></i></span>
+                        <h3>Our approach</h3>
+                        <p>To connect classroom learning with technology, collaboration, and real-world perspectives so students can grow into adaptable professionals.</p>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <section class="about-cta-section" aria-labelledby="about-cta-title">
+            <div class="about-content about-cta-content">
+                <p class="about-section-eyebrow">Your next chapter</p>
+                <h2 id="about-cta-title">Find the path that feels like yours.</h2>
+                <p>Explore ASM NextGen programs or learn more about how to apply.</p>
+                <div class="about-hero-actions">
+                    <a href="coursesprog.html" class="about-button about-button-primary">Explore programs <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="addmission.html" class="about-button about-button-outline">Admissions</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <!-- Footer -->
-    <footer>
-        <p>&copy; 2026 ASM NextGen Technical Campus. All Rights Reserved.</p>
+    <footer class="site-footer">
+        <div class="site-footer-grid">
+            <section class="site-footer-about" aria-labelledby="about-footer-heading">
+                <a class="site-footer-brand" href="home.html" aria-label="ASM NextGen home">
+                    <img src="image/asm-logo.png" alt="ASM NextGen Technical Campus">
+                </a>
+                <h2 id="about-footer-heading">ASM NextGen Technical Campus</h2>
+                <p>ASM Group of Institutes nurtures future-ready professionals through innovation, industry-focused learning and academic excellence.</p>
+            </section>
+            <nav class="site-footer-links" aria-labelledby="about-footer-links">
+                <h2 id="about-footer-links">Explore</h2>
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="coursesprog.html">Courses &amp; Programs</a>
+                <a href="addmission.html">Admissions</a>
+                <a href="campus.html">Campus</a>
+                <a href="Faculty.html">Faculty</a>
+                <a href="department.html">Departments</a>
+                <a href="placement.html">Placements</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <section class="site-footer-contact" aria-labelledby="about-footer-contact">
+                <h2 id="about-footer-contact">Get in touch</h2>
+                <address>Survey No. 401/1, Talegaon Dabhade, Pune, Maharashtra 410506</address>
+                <p><a href="tel:+919028076028">+91 90280 76028</a></p>
+                <p><a href="mailto:admission.asmnextgen@asmedu.org">admission.asmnextgen@asmedu.org</a></p>
+            </section>
+        </div>
+        <div class="site-footer-bottom">
+            <p>&copy; 2026 ASM Group of Institutes. All rights reserved.</p>
+            <nav aria-label="Legal links">
+                <a href="https://asmnext.edu.in/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                <a href="https://asmnext.edu.in/terms-and-conditions" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
+            </nav>
+        </div>
     </footer>
 
+    <script src="js/site.js" defer></script>
 </body>
 </html>

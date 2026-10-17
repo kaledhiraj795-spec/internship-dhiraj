@@ -1,0 +1,293 @@
+body {
+  --campus-navy: #071930;
+  --campus-blue: #1769aa;
+  --campus-bright: #2d8bd5;
+  --campus-pale: #eaf4fc;
+  --campus-ink: #172b43;
+  --campus-muted: #5f7082;
+  --campus-line: #dfe8f1;
+  color: var(--campus-ink);
+  font-family: "Roboto", Arial, sans-serif;
+}
+
+.campus {
+  min-height: 540px;
+  display: grid;
+  align-items: center;
+  background:
+    linear-gradient(90deg, rgb(7 25 48 / 88%) 0%, rgb(7 25 48 / 68%) 48%, rgb(7 25 48 / 24%) 100%),
+    linear-gradient(0deg, rgb(7 25 48 / 30%), transparent 58%),
+    url("../image/asm-campus-building.png") center 45% / cover no-repeat;
+}
+
+.campus::before,
+.campus::after {
+  display: none;
+}
+
+.campus-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.campus .eyebrow {
+  color: #b8e0ff;
+}
+
+.campus h1 {
+  color: #fff;
+  font-family: "Raleway", Arial, sans-serif;
+  font-weight: 800;
+}
+
+.campus-intro {
+  color: #e0eaf5;
+}
+
+.campus-card {
+  border-color: rgb(255 255 255 / 24%);
+  background: rgb(7 25 48 / 43%);
+  box-shadow: 0 10px 30px rgb(0 0 0 / 10%);
+}
+
+.campus-card:hover {
+  border-color: rgb(255 255 255 / 42%);
+  background: rgb(7 25 48 / 58%);
+  box-shadow: 0 18px 38px rgb(0 0 0 / 18%);
+}
+
+.campus-events {
+  padding: clamp(58px, 8vw, 92px) 24px;
+}
+
+.campus-events-opening {
+  padding-bottom: clamp(45px, 6vw, 68px);
+  background: #fff;
+}
+
+.campus-events-featured {
+  background: #f4f7fb;
+}
+
+.campus-events-inner {
+  width: min(1220px, 100%);
+  margin-inline: auto;
+}
+
+.campus-events-heading {
+  max-width: 760px;
+  margin: 0 auto 34px;
+  text-align: center;
+}
+
+.campus-events-kicker {
+  margin: 0 0 10px;
+  color: var(--campus-blue);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+}
+
+.campus-events-heading h2 {
+  margin: 0;
+  color: var(--campus-navy);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: clamp(29px, 4vw, 42px);
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 1.2;
+  text-wrap: balance;
+}
+
+.campus-events-heading > p:last-child {
+  max-width: 680px;
+  margin: 13px auto 0;
+  color: var(--campus-muted);
+  font-size: 15px;
+  line-height: 1.75;
+}
+
+.campus-event-grid {
+  display: grid;
+  gap: 22px;
+}
+
+.campus-event-grid-opening {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.campus-event-grid-featured {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.campus-event-card {
+  min-width: 0;
+  overflow: hidden;
+  border: 1px solid var(--campus-line);
+  border-radius: 16px;
+  background: #fff;
+  box-shadow: 0 8px 26px rgb(7 25 48 / 5%);
+  transition: transform 240ms cubic-bezier(0.2, 0.7, 0.2, 1), border-color 240ms ease, box-shadow 240ms ease;
+}
+
+.campus-event-card:hover {
+  transform: translateY(-6px);
+  border-color: #bfd8ed;
+  box-shadow: 0 18px 38px rgb(7 25 48 / 13%);
+}
+
+.campus-event-photo {
+  position: relative;
+  height: 220px;
+  margin: 0;
+  overflow: hidden;
+  background: #e7eff7;
+}
+
+.campus-event-card-featured .campus-event-photo {
+  height: 280px;
+}
+
+.campus-event-photo::after {
+  position: absolute;
+  inset: 35% 0 0;
+  background: linear-gradient(transparent, rgb(7 25 48 / 62%));
+  content: "";
+  pointer-events: none;
+}
+
+.campus-event-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 500ms cubic-bezier(0.2, 0.7, 0.2, 1);
+}
+
+.campus-event-card:hover .campus-event-photo img {
+  transform: scale(1.045);
+}
+
+.campus-event-photo figcaption {
+  position: absolute;
+  z-index: 1;
+  right: 14px;
+  bottom: 13px;
+  left: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.campus-event-photo figcaption span:first-child {
+  display: grid;
+  width: 32px;
+  height: 32px;
+  place-items: center;
+  border: 1px solid rgb(255 255 255 / 48%);
+  border-radius: 50%;
+  background: rgb(7 25 48 / 25%);
+  letter-spacing: 0;
+}
+
+.campus-event-copy {
+  padding: 20px 21px 23px;
+}
+
+.campus-event-label {
+  margin: 0 0 7px;
+  color: var(--campus-blue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.campus-event-copy h3 {
+  margin: 0;
+  color: var(--campus-navy);
+  font-family: "Raleway", Arial, sans-serif;
+  font-size: 19px;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+.campus-event-copy > p:last-child {
+  margin: 9px 0 0;
+  color: var(--campus-muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.campus-events + .student-life .section-heading {
+  margin-inline: auto;
+  text-align: center;
+}
+
+.campus-events + .student-life .life-search {
+  margin-inline: auto;
+}
+
+.campus-events + .student-life .life-note {
+  border-left-color: var(--campus-blue);
+}
+
+@media (max-width: 1050px) {
+  .campus-event-grid-opening {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .campus-event-grid-featured {
+    width: min(820px, 100%);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    margin-inline: auto;
+  }
+
+  .campus-event-card-featured:last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+    width: min(100%, 390px);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 600px) {
+  .campus {
+    min-height: auto;
+    background-position: 57% center;
+  }
+
+  .campus-events {
+    padding-inline: 18px;
+  }
+
+  .campus-event-grid-opening,
+  .campus-event-grid-featured {
+    width: min(430px, 100%);
+    grid-template-columns: 1fr;
+    margin-inline: auto;
+  }
+
+  .campus-event-card-featured:last-child:nth-child(odd) {
+    grid-column: auto;
+    width: 100%;
+  }
+
+  .campus-event-photo,
+  .campus-event-card-featured .campus-event-photo {
+    height: 250px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .campus-event-card,
+  .campus-event-photo img {
+    transition-duration: 0.01ms !important;
+  }
+}

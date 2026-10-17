@@ -6,13 +6,24 @@
 
 body {
     font-family: Arial, sans-serif;
-    background: #f5f7fa;
-    color: #073f6b;
+    background: var(--paper);
+    color: var(--ink);
+}
+
+:root {
+     --navy: #002B4D;
+     --blue: #0079BD;
+     --bright-blue: #1389C6;
+     --pale-blue: #E8F4FA;
+     --white: #FFFFFF;
+     --ink: #333333;
+     --muted: #626F7B;
+     --paper: #F7F9FC;
 }
 
 /* Navbar */
 .navbar {
-    background: #063b69;
+    background: var(--navy);
     padding: 25px 50px;
     display: flex;
     justify-content: space-between;
@@ -32,9 +43,15 @@ nav a {
     font-weight: bold;
 }
 
+.navbar nav a.active {
+    color: var(--pale-blue);
+    text-decoration: underline;
+    text-underline-offset: 5px;
+}
+
 /* Hero */
 .hero {
-    background: #0867b5;
+    background: var(--blue);
     color: white;
     text-align: center;
     padding: 60px 20px;
@@ -66,15 +83,15 @@ nav a {
     background: white;
     padding: 25px;
     text-align: left;
-    border-top: 4px solid #0867b5;
+    border-top: 4px solid var(--blue);
     border-radius: 8px;
     box-shadow: 0 2px 8px #ccc;
 }
 
 .department-code {
-    background: #e5f1fb;
+    background: var(--pale-blue);
     padding: 8px 12px;
-    color: #0867b5;
+    color: var(--blue);
     font-weight: bold;
 }
 
@@ -89,7 +106,7 @@ nav a {
 
 /* Footer */
 footer {
-    background: #063b69;
+    background: var(--navy);
     color: white;
     text-align: center;
     padding: 20px;
@@ -108,7 +125,7 @@ footer {
 }
 /* View Details Button */
 .view-details-btn {
-    background: #0867b5;
+    background: var(--blue);
     color: white;
     border: none;
     padding: 10px 18px;
@@ -119,21 +136,21 @@ footer {
 }
 
 .view-details-btn:hover {
-    background: #063b69;
+    background: var(--navy);
 }
 
 /* MCA Details */
 .course-details {
     margin-top: 20px;
     padding: 15px;
-    background: #f5f7fa;
+    background: var(--paper);
     border-radius: 6px;
     text-align: left;
 }
 
 .course-details h3 {
     margin: 15px 0 10px;
-    color: #063b69;
+    color: var(--navy);
 }
 
 .course-details ul {

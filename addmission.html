@@ -1,597 +1,282 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#ffffff">
+    <meta name="description" content="Explore Engineering and MCA admissions at ASM NextGen Technical Campus, including programs, eligibility and the admission process.">
+    <title>Admissions | ASM NextGen Technical Campus</title>
 
-    <title>Admissions | ASM's NextGen Technical Campus</title>
-
-    <link rel="stylesheet" href="css/asm.css">
-    <link rel="stylesheet"
-          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        * {
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            margin: 0;
-            font-family: Arial, Helvetica, sans-serif;
-            color: #263445;
-            background: #f5f8fc;
-            line-height: 1.6;
-        }
-
-        /* HEADER AND NAVIGATION */
-        .admissions-navbar {
-            width: 100%;
-            background: linear-gradient(110deg, #203f83, #0879c9);
-        }
-
-        .admissions-navbar .nav-container {
-            position: relative;
-            width: 100%;
-            max-width: 1500px;
-            margin: 0 auto;
-            padding: 18px 25px 12px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 12px;
-        }
-
-        .admissions-navbar .college-brand {
-            position: absolute;
-            top: 18px;
-            left: 35px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            text-decoration: none !important;
-        }
-
-        .admissions-navbar .college-logo {
-            display: block;
-            width: 105px;
-            height: 125px;
-            object-fit: contain;
-        }
-
-        .admissions-navbar .college-name {
-            width: 100%;
-            text-align: center;
-            padding: 0 125px;
-            margin: 0;
-        }
-
-        .admissions-navbar .college-name h2 {
-            margin: 8px 0 0;
-            color: var(--white) !important;
-            font-size: clamp(23px, 3vw, 32px);
-            font-weight: 700;
-            line-height: 1.3;
-        }
-
-        .admissions-navbar .college-name p {
-            margin: 4px 0 0;
-            color: var(--white) !important;
-            font-size: 16px;
-        }
-
-        .admissions-navbar .main-nav {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 5px;
-            margin-top: 12px;
-        }
-
-        .admissions-navbar .main-nav a,
-        .admissions-navbar .main-nav a:visited {
-            display: inline-block;
-            padding: 9px 11px;
-            color: #ffffff !important;
-            text-decoration: none !important;
-            border: none !important;
-            border-radius: 5px;
-            font-size: 14px;
-            font-weight: 600;
-            transition: background-color 0.25s ease;
-        }
-
-        .admissions-navbar .main-nav a:hover,
-        .admissions-navbar .main-nav a:focus {
-            color: #ffffff !important;
-            background: rgba(255, 255, 255, 0.18);
-        }
-
-        .admissions-navbar .main-nav a.active {
-            color: #173d79 !important;
-            background: #ffffff;
-        }
-
-        .admissions-navbar .main-nav a::before,
-        .admissions-navbar .main-nav a::after {
-            content: none !important;
-            display: none !important;
-        }
-
-        /* HERO SECTION */
-        .admissions-hero {
-            padding: 75px 20px;
-            text-align: center;
-            color: #ffffff;
-            background: linear-gradient(135deg, #063b7a, #0879c9);
-        }
-
-        /* ADMISSIONS 2026–27 BADGE */
-        .admissions-hero .hero-subtitle {
-            display: inline-block;
-            margin-bottom: 12px;
-            padding: 8px 18px;
-            background: #ffffff !important;
-            color: #064785 !important;
-            border: 2px solid #ffffff !important;
-            border-radius: 30px;
-            font-size: 14px;
-            font-weight: 700;
-            letter-spacing: 0.4px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
-            transition: all 0.3s ease;
-        }
-
-        .admissions-hero .hero-subtitle:hover {
-            background: #dceeff !important;
-            color: #063b7a !important;
-        }
-
-        .admissions-hero h1 {
-            margin: 10px auto;
-            font-size: clamp(30px, 5vw, 46px);
-            line-height: 1.2;
-        }
-
-        .admissions-hero p {
-            max-width: 720px;
-            margin: 18px auto 25px;
-            color: #edf6ff;
-            font-size: 17px;
-        }
-
-        .admission-btn {
-            display: inline-block;
-            padding: 12px 24px;
-            border-radius: 6px;
-            background: #ffffff;
-            color: #064785;
-            text-decoration: none;
-            font-weight: 700;
-            transition: 0.3s ease;
-        }
-
-        .admission-btn:hover {
-            background: #e5f1ff;
-            transform: translateY(-2px);
-        }
-
-        /* CONTENT SECTIONS */
-        .admission-section {
-            max-width: 1180px;
-            margin: 0 auto;
-            padding: 55px 22px;
-            text-align: center;
-        }
-
-        .admission-section h2 {
-            margin: 0;
-            color: #073e7a;
-            font-size: clamp(25px, 4vw, 32px);
-        }
-
-        .section-underline {
-            width: 65px;
-            height: 4px;
-            margin: 12px auto 25px;
-            border-radius: 4px;
-            background: #1685d4;
-        }
-
-        .section-intro {
-            max-width: 820px;
-            margin: 0 auto;
-            color: #586779;
-        }
-
-        .admission-grid,
-        .eligibility-grid,
-        .process-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 24px;
-            margin-top: 30px;
-            text-align: left;
-        }
-
-        .eligibility-grid,
-        .process-grid {
-            gap: 22px;
-        }
-
-        .process-grid {
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-        }
-
-        .admission-card {
-            padding: 28px 25px;
-            border: 1px solid #e0eaf5;
-            border-radius: 12px;
-            background: #ffffff;
-            box-shadow: 0 5px 18px rgba(18, 60, 100, 0.07);
-            transition: transform 0.25s ease,
-                        box-shadow 0.25s ease;
-        }
-
-        .admission-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(18, 60, 100, 0.13);
-        }
-
-        .admission-icon {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 58px;
-            height: 58px;
-            margin-bottom: 18px;
-            border-radius: 12px;
-            background: #e8f3ff;
-            color: #0868b7;
-            font-size: 25px;
-        }
-
-        .card-label {
-            display: inline-block;
-            margin-bottom: 8px;
-            color: #0877c9;
-            font-size: 13px;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-        }
-
-        .admission-card h3 {
-            margin: 0 0 12px;
-            color: #123d68;
-            font-size: 21px;
-            line-height: 1.4;
-        }
-
-        .admission-card p {
-            margin: 0;
-            color: #5b6878;
-            font-size: 15px;
-        }
-
-        .admission-card ul {
-            margin: 16px 0 0;
-            padding-left: 20px;
-            color: #5b6878;
-            font-size: 14px;
-        }
-
-        .admission-card li {
-            margin-bottom: 7px;
-        }
-
-        .admission-note {
-            margin-top: 25px;
-            padding: 16px 20px;
-            border-left: 4px solid #1685d4;
-            border-radius: 6px;
-            background: #eaf4ff;
-            color: #274c70;
-            text-align: left;
-            font-size: 14px;
-        }
-
-        .process-number {
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            width: 42px;
-            height: 42px;
-            margin-bottom: 17px;
-            border-radius: 50%;
-            background: #0868b7;
-            color: #ffffff;
-            font-weight: 700;
-            font-size: 18px;
-        }
-
-        /* CONTACT SECTION */
-        .admission-cta {
-            margin: 0 22px 55px;
-            padding: 35px 22px;
-            border-radius: 12px;
-            background: #e8f3ff;
-            text-align: center;
-        }
-
-        .admission-cta h2 {
-            margin: 0 0 10px;
-            color: #073e7a;
-        }
-
-        .admission-cta p {
-            margin: 0 auto 20px;
-            color: #586779;
-        }
-
-        .contact-btn {
-            display: inline-block;
-            padding: 12px 23px;
-            border-radius: 6px;
-            background: #0757a2;
-            color: #ffffff;
-            text-decoration: none;
-            font-weight: 700;
-            transition: background-color 0.3s ease;
-        }
-
-        .contact-btn:hover {
-            background: #063b7a;
-        }
-
-        /* RESPONSIVE DESIGN */
-        @media (max-width: 900px) {
-            .admissions-navbar .nav-container {
-                padding: 18px 12px 12px;
-            }
-
-            .admissions-navbar .college-brand {
-                position: static;
-                margin-bottom: 0;
-            }
-
-            .admissions-navbar .college-logo {
-                width: 75px;
-                height: 85px;
-            }
-
-            .admissions-navbar .college-name {
-                padding: 0 8px;
-            }
-
-            .admissions-navbar .college-name h2 {
-                margin-top: 0;
-            }
-
-            .admissions-navbar .main-nav {
-                margin-top: 8px;
-            }
-
-            .admissions-navbar .main-nav a {
-                font-size: 13px;
-                padding: 8px 9px;
-            }
-        }
-
-        @media (max-width: 768px) {
-            .admissions-hero {
-                padding: 55px 18px;
-            }
-
-            .admission-grid,
-            .eligibility-grid,
-            .process-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .admission-section {
-                padding: 40px 18px;
-            }
-
-            .admission-card {
-                padding: 23px 20px;
-            }
-
-            .admission-cta {
-                margin: 0 18px 40px;
-            }
-        }
-    </style>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500;600;700;800&family=Roboto:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/site.css">
+    <link rel="stylesheet" href="css/admission.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="js/site.js" defer></script>
+    <script src="js/admission.js?v=2" defer></script>
 </head>
 
-<body>
-
-    <!-- Centralized Dynamic Navbar -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <a href="home.html" class="logo">ASM Technical Campus</a>
-            <ul class="nav-links">
-                <li><a href="home.html">Home</a></li>
-                <li><a href="about.html">About Us</a></li>
-                <li><a href="coursesprog.html">Programs</a></li>
-                <li><a href="department.html">Departments</a></li>
-                <li><a href="addmission.html" class="active">Admissions</a></li>
-                <li><a href="placement.html">Placements</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-            </ul>
-        </div>
-    </nav>
-
+<body class="page-admissions">
+    <header class="site-shared-header">
+        <div class="site-header-inner">
+            <a class="site-brand" href="home.html" aria-label="ASM NextGen home">
+                <img src="image/asm-logo.png" alt="ASM NextGen Technical Campus">
+                <span>ASM NextGen Technical Campus</span>
+            </a>
+            <button class="site-menu-toggle" type="button" data-site-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+                <span></span><span></span><span></span>
+            </button>
+            <nav class="site-navigation" id="site-navigation" data-site-navigation aria-label="Main navigation">
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="coursesprog.html">Courses &amp; Programs</a>
+                <a href="addmission.html" aria-current="page">Admissions</a>
+                <a href="campus.html">Campus</a>
+                <a href="Faculty.html">Faculty</a>
+                <a href="department.html">Departments</a>
+                <a href="placement.html">Placements</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
         </div>
     </header>
 
     <main>
-
-        <!-- ================= HERO SECTION ================= -->
-        <section class="page-hero hero">
-            <div class="container">
-                <span class="hero-subtitle">Admissions 2026-27</span>
-                <h1>Engineering & MCA Admissions</h1>
-                <p class="hero-description">
-                    Start your journey towards a successful career in Engineering and Computer Applications at ASM's
-                    Nextgen Technical Campus.
+        <section class="admission-hero" aria-labelledby="admission-hero-title">
+            <div class="admission-hero-content">
+                <p class="admission-eyebrow">Admissions at ASM NextGen</p>
+                <h1 id="admission-hero-title">Engineering &amp; MCA Admissions</h1>
+                <p class="admission-hero-copy">
+                    Take the next step toward a future in engineering and computing.
+                    Explore your program, check the eligibility requirements, and learn how to apply.
                 </p>
-                <a href="#admission-process" class="btn hero-btn">View Admission Process</a>
+                <a class="admission-button admission-button-primary" href="#admission-process">
+                    View Admission Process
+                    <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                </a>
             </div>
+            <a class="admission-hero-scroll" href="#programs" aria-label="Scroll to programs">
+                <i class="fa-solid fa-chevron-down" aria-hidden="true"></i>
+            </a>
         </section>
 
-        <!-- ================= INTRO SECTION ================= -->
-        <section class="departments-section admission-intro">
-            <h2>Shape Your Future With Us</h2>
-            <div class="underline"></div>
+        <section class="admission-intro admission-section" aria-labelledby="admission-intro-title">
+            <p class="admission-kicker">Your next chapter starts here</p>
+            <h2 id="admission-intro-title">Build skills for what comes next</h2>
             <p>
-                ASM's Nextgen Technical Campus provides students with an environment focused on technical education,
-                practical learning, innovation, and career development.
-            </p>
-            <p>
-                Students aspiring to build careers in Engineering and Computer Applications can explore our
-                undergraduate and postgraduate programmes and begin their academic journey with ASM.
+                Explore career-focused programs, practical learning, and a supportive
+                academic community at ASM NextGen Technical Campus.
             </p>
         </section>
 
-        <!-- ================= PROGRAMS SECTION ================= -->
-        <section class="departments-section career-path-section" id="career-path">
-            <h2>Choose Your Career Path</h2>
-            <div class="section-underline"></div>
+        <section class="admission-section admission-programs" id="programs" aria-labelledby="programs-title">
+            <div class="admission-section-heading">
+                <p class="admission-kicker">Find your direction</p>
+                <h2 id="programs-title">Explore Our Programs</h2>
+                <p>Search the available admission pathways or filter by program type.</p>
+            </div>
 
-            <div class="program-filters">
-                <div class="program-filter">
-                    <label for="program-search">Search programs</label>
-                    <input
-                        type="search"
-                        id="program-search"
-                        placeholder="Search by program title"
-                        autocomplete="off"
-                    >
-                </div>
-                <div class="program-filter">
-                    <label for="program-type-filter">Program type</label>
-                    <select id="program-type-filter">
-                        <option value="all">All programs</option>
-                        <option value="ug">UG Program</option>
-                        <option value="pg">PG Program</option>
+            <div class="program-filters" role="search" aria-label="Filter admission programs">
+                <label class="program-filter" for="program-search">
+                    <span>Search programs</span>
+                    <span class="program-input-wrap">
+                        <i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i>
+                        <input
+                            type="search"
+                            id="program-search"
+                            placeholder="Search by program title"
+                            autocomplete="off"
+                            aria-controls="program-grid">
+                    </span>
+                </label>
+                <label class="program-filter" for="program-type-filter">
+                    <span>Program type</span>
+                    <select id="program-type-filter" aria-controls="program-grid">
+                        <option value="all">All program types</option>
+                        <option value="ug">Undergraduate — Engineering</option>
+                        <option value="pg">Postgraduate — MCA</option>
                     </select>
-                </div>
+                </label>
             </div>
             <p class="program-filter-status" id="program-filter-status" role="status" aria-live="polite"></p>
 
-            <div class="department-container program-grid">
-                <!-- Engineering Card -->
-                <div class="department-card" data-program-type="ug">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-gears"></i>
+            <div class="program-grid" id="program-grid">
+                <article class="program-card" data-program-type="ug">
+                    <div class="program-card-topline">
+                        <span class="program-icon" aria-hidden="true"><i class="fa-solid fa-gears"></i></span>
+                        <span class="program-level">Undergraduate</span>
                     </div>
-
-                    <span class="card-label">Undergraduate</span>
                     <h3>Engineering</h3>
-                    <p>Build a strong foundation in engineering, technology, and problem-solving through practical and
-                        industry-oriented education.</p>
-                    <ul class="department-feature-list">
-                        <li>Technical & engineering fundamentals</li>
-                        <li>Practical laboratory experience</li>
-                        <li>Project-based learning</li>
-                        <li>Technical skill development</li>
+                    <p>Build your technical foundation through engineering principles, hands-on learning, and problem-solving.</p>
+                    <ul>
+                        <li>Engineering and technology fundamentals</li>
+                        <li>Practical and project-based learning</li>
+                        <li>Technical and professional skill development</li>
                     </ul>
+                    <a class="program-card-link" href="#eligibility-criteria">
+                        View eligibility <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
                 </article>
 
-                <!-- MCA Card -->
-                <div class="department-card" data-program-type="pg">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-laptop-code"></i>
+                <article class="program-card" data-program-type="ug">
+                    <div class="program-card-topline">
+                        <span class="program-icon" aria-hidden="true"><i class="fa-solid fa-code"></i></span>
+                        <span class="program-level">Undergraduate</span>
                     </div>
+                    <h3>Bachelor of Computer Applications (BCA)</h3>
+                    <p>Build practical computing skills in programming, application development, and modern information technology.</p>
+                    <ul>
+                        <li>Programming and software fundamentals</li>
+                        <li>Web technologies and database concepts</li>
+                        <li>Applied projects and problem-solving</li>
+                    </ul>
+                    <a class="program-card-link" href="#eligibility-criteria">
+                        View eligibility <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
+                </article>
 
-                    <span class="card-label">Postgraduate</span>
+                <article class="program-card" data-program-type="pg">
+                    <div class="program-card-topline">
+                        <span class="program-icon" aria-hidden="true"><i class="fa-solid fa-laptop-code"></i></span>
+                        <span class="program-level">Postgraduate</span>
+                    </div>
                     <h3>Master of Computer Applications (MCA)</h3>
-                    <p>Develop advanced knowledge in computer applications, software development, programming, and
-                        modern technologies.</p>
-                    <ul class="department-feature-list">
-                        <li>Programming & software development</li>
-                        <li>Database & web technologies</li>
-                        <li>Practical full-stack projects</li>
-                        <li>Professional career development</li>
+                    <p>Advance your knowledge of computing, software development, and modern digital technologies.</p>
+                    <ul>
+                        <li>Programming and software development</li>
+                        <li>Database and web technologies</li>
+                        <li>Applied projects and career preparation</li>
                     </ul>
+                    <a class="program-card-link" href="#eligibility-criteria">
+                        View eligibility <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+                    </a>
                 </article>
-
             </div>
         </section>
 
-        <!-- ================= ELIGIBILITY CRITERIA ================= -->
-        <section class="departments-section" id="eligibility-criteria">
-            <h2>Eligibility Criteria</h2>
-            <div class="section-underline"></div>
+        <section class="admission-section eligibility-section" id="eligibility-criteria" aria-labelledby="eligibility-title">
+            <div class="admission-section-heading">
+                <p class="admission-kicker">Plan with confidence</p>
+                <h2 id="eligibility-title">Eligibility Criteria</h2>
+                <p>Requirements may vary by program and admission year. Confirm the latest criteria with the admissions office.</p>
+            </div>
 
-            <div class="department-container eligibility-grid">
-                <div class="department-card">
-                    <div class="card-icon"><i class="fa-solid fa-graduation-cap"></i></div>
-                    <h3>Engineering Qualification</h3>
-                    <p>Successfully completed higher secondary education (12th/HSC) or diploma with required marks
-                        and subjects as per admission rules.</p>
-                </div>
+            <div class="eligibility-grid">
+                <article class="info-card">
+                    <span class="info-card-icon" aria-hidden="true"><i class="fa-solid fa-graduation-cap"></i></span>
+                    <div>
+                        <p class="info-card-label">Engineering</p>
+                        <h3>Academic Qualification</h3>
+                        <p>Applicants should meet the current educational, subject, and minimum-mark requirements for their selected engineering program.</p>
+                    </div>
+                </article>
+                <article class="info-card">
+                    <span class="info-card-icon" aria-hidden="true"><i class="fa-solid fa-award"></i></span>
+                    <div>
+                        <p class="info-card-label">Engineering</p>
+                        <h3>Entrance &amp; Merit</h3>
+                        <p>Applicants must satisfy the applicable entrance examination, merit, and counseling requirements for the admission year.</p>
+                    </div>
+                </article>
+                <article class="info-card">
+                    <span class="info-card-icon" aria-hidden="true"><i class="fa-solid fa-user-graduate"></i></span>
+                    <div>
+                        <p class="info-card-label">MCA</p>
+                        <h3>Graduation Requirement</h3>
+                        <p>Applicants should hold a recognized bachelor's degree and meet the current subject and eligibility requirements for MCA.</p>
+                    </div>
+                </article>
+                <article class="info-card">
+                    <span class="info-card-icon" aria-hidden="true"><i class="fa-solid fa-clipboard-check"></i></span>
+                    <div>
+                        <p class="info-card-label">MCA</p>
+                        <h3>Entrance &amp; Admission Rules</h3>
+                        <p>Applicants must meet the relevant entrance examination, merit, and admission procedures prescribed for the current year.</p>
+                    </div>
+                </article>
+            </div>
+            <p class="eligibility-note">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                Eligibility and seat availability can change. Please verify the current official admission rules before applying.
+            </p>
+        </section>
 
-                    <h3>Engineering Entrance</h3>
-                    <p>Fulfill applicable entrance examination requirements (MH-CET / JEE) and merit guidelines
-                        prescribed for admission.</p>
-                </div>
+        <section class="admission-section process-section" id="admission-process" aria-labelledby="process-title">
+            <div class="admission-section-heading">
+                <p class="admission-kicker">Three clear steps</p>
+                <h2 id="process-title">Admission Process</h2>
+                <p>Our team is here to help you move through each step of your application.</p>
+            </div>
 
-                <div class="department-card">
-                    <div class="card-icon"><i class="fa-solid fa-user-graduate"></i></div>
-                    <h3>MCA Graduation</h3>
-                    <p>Completed recognized Bachelor's degree (BCA/B.Sc/B.Com/B.A) with Mathematics/Statistics at
-                        10+2 level or Graduation level.</p>
-                </div>
-
-                    <h3>MCA Entrance Requirements</h3>
-                    <p>Must qualify the applicable entrance examination as per university and government admission
-                        guidelines.</p>
-                </div>
+            <div class="process-grid">
+                <article class="process-card">
+                    <span class="process-number" aria-hidden="true">01</span>
+                    <span class="process-icon" aria-hidden="true"><i class="fa-solid fa-file-pen"></i></span>
+                    <h3>Application</h3>
+                    <p>Choose your program and complete the applicable application with accurate information.</p>
+                </article>
+                <article class="process-card">
+                    <span class="process-number" aria-hidden="true">02</span>
+                    <span class="process-icon" aria-hidden="true"><i class="fa-solid fa-folder-open"></i></span>
+                    <h3>Document Verification</h3>
+                    <p>Submit the required academic and supporting documents for review and verification.</p>
+                </article>
+                <article class="process-card">
+                    <span class="process-number" aria-hidden="true">03</span>
+                    <span class="process-icon" aria-hidden="true"><i class="fa-solid fa-circle-check"></i></span>
+                    <h3>Admission Confirmation</h3>
+                    <p>Complete the applicable counseling, fee, and admission formalities to confirm your place.</p>
+                </article>
             </div>
         </section>
-        <!-- ================= ADMISSION PROCESS ================= -->
-        <section class="departments-section" id="admission-process">
-            <h2>Admission Process</h2>
-            <div class="underline"></div>
 
-            <div class="department-container">
-                <div class="department-card">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-file-lines"></i>
-                    </div>
-                    <h3>Step 1: Application</h3>
-                    <p>Complete the admission application form and provide the required details.</p>
-                </div>
-
-                <div class="department-card">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-file-circle-check"></i>
-                    </div>
-                    <h3>Step 2: Document Verification</h3>
-                    <p>Submit the necessary academic documents for verification.</p>
-                </div>
-
-                <div class="department-card">
-                    <div class="card-icon">
-                        <i class="fa-solid fa-list-check"></i>
-                    </div>
-                    <h3>Step 3: Admission Confirmation</h3>
-                    <p>Complete the applicable admission formalities as instructed by the college.</p>
-                </div>
+        <section class="admission-contact-cta" aria-labelledby="admission-cta-title">
+            <div>
+                <p class="admission-kicker">Need a hand?</p>
+                <h2 id="admission-cta-title">Let’s plan your next step</h2>
+                <p>Contact our team for current program availability and admission guidance.</p>
             </div>
+            <a class="admission-button admission-button-light" href="contact.html">
+                Contact Admissions <i class="fa-solid fa-arrow-right" aria-hidden="true"></i>
+            </a>
         </section>
     </main>
 
-    <script src="asm.js"></script>
-    <script src="js/admission.js"></script>
+    <footer class="site-footer">
+        <div class="site-footer-grid">
+            <section class="site-footer-about" aria-labelledby="admissions-footer-heading">
+                <a class="site-footer-brand" href="home.html" aria-label="ASM NextGen home">
+                    <img src="image/asm-logo.png" alt="ASM NextGen Technical Campus">
+                </a>
+                <h2 id="admissions-footer-heading">ASM NextGen Technical Campus</h2>
+                <p>Future-ready education through innovation, industry-focused learning and academic excellence in Talegaon Dabhade, Pune.</p>
+            </section>
+            <nav class="site-footer-links" aria-labelledby="admissions-footer-links">
+                <h2 id="admissions-footer-links">Explore</h2>
+                <a href="home.html">Home</a>
+                <a href="about.html">About Us</a>
+                <a href="coursesprog.html">Courses &amp; Programs</a>
+                <a href="addmission.html">Admissions</a>
+                <a href="campus.html">Campus</a>
+                <a href="Faculty.html">Faculty</a>
+                <a href="department.html">Departments</a>
+                <a href="placement.html">Placements</a>
+                <a href="contact.html">Contact Us</a>
+            </nav>
+            <section class="site-footer-contact" aria-labelledby="admissions-footer-contact">
+                <h2 id="admissions-footer-contact">Get in touch</h2>
+                <address>Survey No. 401/1, Talegaon Dabhade, Pune, Maharashtra 410506</address>
+                <p><a href="tel:+919028076028">+91 90280 76028</a></p>
+                <p><a href="mailto:admission.asmnextgen@asmedu.org">admission.asmnextgen@asmedu.org</a></p>
+            </section>
+        </div>
+        <div class="site-footer-bottom">
+            <p>&copy; 2026 ASM Group of Institutes. All rights reserved.</p>
+            <nav aria-label="Legal links">
+                <a href="https://asmnext.edu.in/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+                <a href="https://asmnext.edu.in/terms-and-conditions" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
+            </nav>
+        </div>
+    </footer>
 </body>
-
 </html>

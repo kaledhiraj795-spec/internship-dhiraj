@@ -1069,3 +1069,88 @@ footer p {
 .nav-links li a.active {
   color: #ff4d4d;
 }
+
+:root {
+  --asm-navy: #002B4D;
+  --asm-blue: #0079BD;
+  --asm-bright-blue: #1389C6;
+  --asm-pale-blue: #E8F4FA;
+  --asm-ink: #333333;
+  --asm-muted: #626F7B;
+  --asm-paper: #F7F9FC;
+}
+
+.navbar {
+  background: var(--asm-navy);
+}
+
+body {
+  color: var(--asm-ink);
+}
+
+.page-hero.hero,
+.placement-hero {
+  background: linear-gradient(135deg, var(--asm-navy), var(--asm-blue));
+}
+
+.page-hero {
+  border-bottom-color: var(--asm-bright-blue);
+}
+
+.hero-subtitle,
+.badge {
+  background: rgba(19, 137, 198, 0.18);
+  color: var(--asm-pale-blue);
+  border-color: rgba(232, 244, 250, 0.4);
+}
+
+.page-hero .btn,
+.btn-primary {
+  background: var(--asm-blue);
+}
+
+.page-hero .btn:hover,
+.btn-primary:hover {
+  background: var(--asm-bright-blue);
+}
+
+.departments-section h2,
+.content-card h3,
+.card-icon,
+.counter {
+  color: var(--asm-navy);
+}
+
+.underline,
+.stat-icon {
+  background-color: var(--asm-bright-blue);
+  color: var(--asm-bright-blue);
+}
+
+.department-code {
+  background: var(--asm-pale-blue);
+  color: var(--asm-blue);
+}
+
+.step-card,
+.stat-box,
+.department-card {
+  border-color: #D7E3EB;
+}
+
+.document-item {
+  border-left-color: var(--asm-bright-blue);
+}
+
+.document-icon {
+  color: var(--asm-blue);
+}
+
+.stats-section {
+  background: var(--asm-paper);
+}
+
+.nav-links li a:hover,
+.nav-links li a.active {
+  color: var(--asm-pale-blue);
+}

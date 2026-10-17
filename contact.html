@@ -3,39 +3,50 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#063b69">
-  <title>Contact Us | ASM College</title>
+  <meta name="theme-color" content="#071930">
+  <meta name="description" content="Get in touch with ASM NextGen Technical Campus and explore upcoming and recent campus events.">
+  <title>Contact Us | ASM NextGen Technical Campus</title>
   <link rel="stylesheet" href="css/contact.css">
+  <link rel="stylesheet" href="css/site.css">
 </head>
-<body class="contact-page">
-  <header class="contact-navbar">
-    <a class="contact-logo" href="asm.html">ASM College</a>
-     <nav class="main-nav">
-            <a href="home.html">Home</a>
-            <a href="about.html">About</a>
-            <a href="campus.html">Campus</a>
-            <a href="coursesprog.html">Courses & Programs</a>
-            <a href="contacts.html">Contact Us</a>
-            <a href="placements.html">Placements</a>
-            <a href="department.html">Department</a>
-            <a href="Faculty.html" class="active">Faculty</a>
-        </nav>
+<body class="contact-page page-contact">
+  <header class="site-shared-header">
+    <div class="site-header-inner">
+      <a class="site-brand" href="home.html" aria-label="ASM NextGen home">
+        <img src="image/asm-logo.png" alt="ASM NextGen Technical Campus">
+        <span>ASM NextGen Technical Campus</span>
+      </a>
+      <button class="site-menu-toggle" type="button" data-site-menu-toggle aria-label="Open navigation menu" aria-expanded="false" aria-controls="site-navigation">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="site-navigation" id="site-navigation" data-site-navigation aria-label="Main navigation">
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="coursesprog.html">Courses &amp; Programs</a>
+        <a href="addmission.html">Admissions</a>
+        <a href="campus.html">Campus</a>
+        <a href="Faculty.html">Faculty</a>
+        <a href="department.html">Departments</a>
+        <a href="placement.html">Placements</a>
+        <a href="contact.html" aria-current="page">Contact Us</a>
+      </nav>
+    </div>
   </header>
 
   <main>
     <section class="contact-hero">
-      <p class="contact-eyebrow">We’re here to help</p>
+      <p class="contact-eyebrow">ASM NextGen Technical Campus</p>
       <h1>Get in Touch</h1>
-      <p>Have a question about ASM College? Send us a message or reach us using the details below.</p>
+      <p>Have a question? Send us a message or reach out to our team using the contact details below.</p>
     </section>
 
     <section class="contact-events" aria-labelledby="events-heading">
       <div class="contact-section-heading">
         <div>
-          <p class="contact-eyebrow">What’s happening</p>
-          <h2 id="events-heading">College Events &amp; News</h2>
+          <p class="contact-eyebrow">What’s happening at ASM</p>
+          <h2 id="events-heading">Campus Events</h2>
+          <p class="contact-section-subtitle">Explore upcoming and recent events, workshops, seminars and activities at ASM NextGen Technical Campus.</p>
         </div>
-        <span class="contact-heading-rule" aria-hidden="true"></span>
       </div>
 
       <form class="contact-event-filters" id="event-filters" role="search">
@@ -45,23 +56,14 @@
             id="event-search"
             name="search"
             type="search"
-            placeholder="Search by title, date, or details"
+            placeholder="Search event titles or details"
             autocomplete="off"
           >
         </div>
-        <div>
-          <label for="event-category">Filter by category</label>
-          <select id="event-category" name="category">
-            <option value="all">All categories</option>
-            <option value="technology">Technology</option>
-            <option value="guest-lecture">Guest lectures</option>
-          </select>
-        </div>
-        <button type="button" data-action="clear-filters">Clear filters</button>
+        <button type="button" data-action="clear-filters">Clear search</button>
       </form>
 
       <p class="contact-event-status" id="event-results-status" role="status" aria-live="polite"></p>
-      <p class="contact-event-status contact-event-storage-status" id="event-storage-status" role="status" aria-live="polite"></p>
       <div class="contact-event-grid" id="event-list"></div>
     </section>
 
@@ -100,21 +102,23 @@
             <span class="contact-detail-icon" aria-hidden="true">@</span>
             <div>
               <h4>Email</h4>
-              <a href="mailto:info@asmcollege.edu">info@asmcollege.edu</a>
+              <a href="mailto:admission.asmnextgen@asmedu.org">admission.asmnextgen@asmedu.org</a>
             </div>
           </div>
           <div class="contact-detail">
             <span class="contact-detail-icon" aria-hidden="true">☎</span>
             <div>
               <h4>Phone</h4>
-              <a href="tel:+919876543210">+91-9876543210</a>
+              <a href="tel:+919028076028">+91 90280 76028</a>
+              <a href="tel:+917588462742">+91 75884 62742</a>
+              <a href="tel:+919028022871">+91 90280 22871</a>
             </div>
           </div>
           <div class="contact-detail">
             <span class="contact-detail-icon" aria-hidden="true">⌖</span>
             <div>
               <h4>Address</h4>
-              <p>ASM College, Pune, MH, India</p>
+              <p>Survey No.401/1, Jain Mandir, Old Mumbai - Pune Hwy, adjacent to Parshwa Prandyalay Jain Temple Road, Talegaon Dabhade, Pune, Maharashtra 410506</p>
             </div>
           </div>
         </aside>
@@ -123,9 +127,94 @@
   </main>
 
   <footer class="contact-footer">
-    <p>&copy; 2026 ASM College. All Rights Reserved.</p>
+    <div class="contact-footer-grid">
+      <section class="footer-institute" aria-labelledby="footer-institute-heading">
+        <a class="footer-brand" href="home.html" aria-label="ASM NextGen home">
+          <img src="image/asm-logo.png" alt="ASM NextGen Technical Campus">
+        </a>
+        <h2 id="footer-institute-heading">ASM NextGen Technical Campus</h2>
+        <p>ASM Group of Institutes is a leading educational institution dedicated to nurturing future-ready professionals through innovation, industry-focused learning, and academic excellence.</p>
+        <nav class="footer-socials" aria-label="Follow ASM on social media">
+          <a href="https://www.facebook.com/NextGenTechnicalCampus/" target="_blank" rel="noopener noreferrer" aria-label="ASM on Facebook">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.4 21v-8h2.7l.4-3.1h-3.1v-2c0-.9.3-1.5 1.6-1.5h1.7V3.6c-.3 0-1.3-.1-2.4-.1-2.4 0-4 1.5-4 4.2v2.3H7.6V13h2.7v8h3.1Z"/></svg>
+          </a>
+          <a href="https://www.instagram.com/asm_next/" target="_blank" rel="noopener noreferrer" aria-label="ASM on Instagram">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="3.5" width="17" height="17" rx="5"/><circle cx="12" cy="12" r="4"/><circle class="social-icon-dot" cx="17.6" cy="6.7" r="1"/></svg>
+          </a>
+          <a href="https://www.youtube.com/@ASMNextgenTechnicalCampus" target="_blank" rel="noopener noreferrer" aria-label="ASM on YouTube">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 7.2a2.5 2.5 0 0 0-1.8-1.8C17.6 5 12 5 12 5s-5.6 0-7.2.4A2.5 2.5 0 0 0 3 7.2 26 26 0 0 0 2.6 12a26 26 0 0 0 .4 4.8 2.5 2.5 0 0 0 1.8 1.8C6.4 19 12 19 12 19s5.6 0 7.2-.4a2.5 2.5 0 0 0 1.8-1.8 26 26 0 0 0 .4-4.8 26 26 0 0 0-.4-4.8Z"/><path class="social-icon-cutout" d="m10 15.5 5-3.5-5-3.5z"/></svg>
+          </a>
+          <a href="https://www.linkedin.com/company/asm-nextgen-technical-campus/" target="_blank" rel="noopener noreferrer" aria-label="ASM on LinkedIn">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.5a1.7 1.7 0 1 0 0-3.4 1.7 1.7 0 0 0 0 3.4ZM5 10h3v9H5zM10 10h2.9v1.2h.1a3.2 3.2 0 0 1 2.9-1.5c3.1 0 3.7 2 3.7 4.6V19h-3v-4.2c0-1 0-2.4-1.5-2.4s-1.8 1.1-1.8 2.3V19h-3V10Z"/></svg>
+          </a>
+        </nav>
+      </section>
+
+      <nav class="footer-links" aria-labelledby="footer-links-heading">
+        <h2 id="footer-links-heading">Quick Links</h2>
+        <a href="home.html">Home</a>
+        <a href="about.html">About Us</a>
+        <a href="coursesprog.html">Courses &amp; Programs</a>
+        <a href="addmission.html">Admissions</a>
+        <a href="campus.html">Campus</a>
+        <a href="Faculty.html">Faculty</a>
+        <a href="department.html">Departments</a>
+        <a href="placement.html">Placements</a>
+        <a href="contact.html">Contact Us</a>
+      </nav>
+
+      <section class="footer-contact" aria-labelledby="footer-contact-heading">
+        <h2 id="footer-contact-heading">Contact Us</h2>
+        <address>Survey No.401/1, Jain Mandir, Old Mumbai - Pune Hwy, adjacent to Parshwa Prandyalay Jain Temple Road, Talegaon Dabhade, Pune, Maharashtra 410506</address>
+        <p class="footer-contact-label">Phone</p>
+        <p>
+          <a href="tel:+919028076028">+91 90280 76028</a> /
+          <a href="tel:+919028076029">29</a> /
+          <a href="tel:+919028076030">30</a> /
+          <a href="tel:+919028076037">37</a><br>
+          <a href="tel:+917588462742">7588462742</a>,
+          <a href="tel:+919028022871">9028022871</a>
+        </p>
+        <p class="footer-contact-label">Email</p>
+        <a href="mailto:admission.asmnextgen@asmedu.org">admission.asmnextgen@asmedu.org</a>
+      </section>
+
+      <section class="footer-location" aria-labelledby="footer-location-heading">
+        <h2 id="footer-location-heading">Campus Location</h2>
+        <div class="footer-map">
+          <iframe
+            title="Map showing ASM NextGen Technical Campus in Talegaon Dabhade"
+            src="https://maps.google.com/maps?q=ASM%20NextGen%20Technical%20Campus%2C%20Talegaon%20Dabhade%2C%20Pune&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=&amp;output=embed"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade">
+          </iframe>
+        </div>
+        <a class="footer-map-link" href="https://www.google.com/maps/search/?api=1&amp;query=ASM%20NextGen%20Technical%20Campus%2C%20Talegaon%20Dabhade%2C%20Pune" target="_blank" rel="noopener noreferrer">Open in Maps <span aria-hidden="true">↗</span></a>
+      </section>
+    </div>
+
+    <nav class="footer-useful-links" aria-label="Useful links">
+      <span>Useful Links</span>
+      <a href="https://www.unipune.ac.in/" target="_blank" rel="noopener noreferrer">SPPU</a>
+      <a href="https://www.aicte-india.org/" target="_blank" rel="noopener noreferrer">AICTE</a>
+      <a href="https://dte.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">DTE</a>
+      <a href="https://www.ugc.gov.in/" target="_blank" rel="noopener noreferrer">UGC</a>
+      <a href="https://sjsa.maharashtra.gov.in/" target="_blank" rel="noopener noreferrer">Samaj Kalyan Vibhag</a>
+      <a href="https://www.antiragging.in/" target="_blank" rel="noopener noreferrer">Anti Ragging</a>
+      <a href="https://www.nbaind.org/" target="_blank" rel="noopener noreferrer">NBA</a>
+    </nav>
+
+    <div class="contact-footer-bottom">
+      <p>&copy; 2026 ASM Group of Institutes.</p>
+      <nav aria-label="Legal links">
+        <a href="https://asmnext.edu.in/privacy-policy" target="_blank" rel="noopener noreferrer">Privacy Policy</a>
+        <span aria-hidden="true">|</span>
+        <a href="https://asmnext.edu.in/terms-and-conditions" target="_blank" rel="noopener noreferrer">Terms &amp; Conditions</a>
+      </nav>
+    </div>
   </footer>
 
-  <script src="js/contact.js"></script>
+  <script src="js/contact.js" defer></script>
+  <script src="js/site.js" defer></script>
 </body>
 </html>
